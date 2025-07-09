@@ -1,0 +1,33 @@
+name: "[lint] Run reviewdog"
+description: "Run reviewdog for TikTok. Needs dependencies to be installed."
+
+inputs:
+  runners:
+    description: "Runners to use, comma separated"
+    required: true
+  
+
+runs:
+  using: "composite"
+  steps:
+    - name: "[linters] install reviewdog"
+      shell: sh
+      run: |
+        set -eu
+        "./.github/actions/linters/install.sh"
+      env:
+        REVIEWDOG_VERSION: latest
+        REVIEWDOG_TEMPDIR: ${{ runner.temp }}
+
+    - name: "[linters] check reviewdog is successfully installed"
+      shell: sh
+      run: |
+        set -eu
+        "./.github/actions/linters/check-installed.sh"
+
+    - name: "[linters] run reviewdog"
+      shell: bash
+      # Try -reporter=github-pr-review
+      run: |
+        reviewdog --name=reviewdog -level=info --fail-level=error -filter-mode=nofilter -runners=${{ inputs.runners }}
+

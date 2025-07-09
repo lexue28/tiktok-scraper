@@ -1,0 +1,64 @@
+name: 'Setup Poetry'
+description: 'Install and configure Poetry package manager in the current job. Supports custom package sources with authentication and configurable virtual environment settings.'
+
+inputs:
+  password:
+    required: false
+    description: >
+      Password to authenticate Poetry package sources. Required if source is provided.
+  poetry-version:
+    required: false
+    description: >
+      Version of Poetry to install. If not specified, installs the latest version.
+  source:
+    required: false
+    description: >
+      Name of the Poetry package source configured in pyproject.toml under [[tool.poetry.source]].
+  username:
+    required: false
+    description: >
+      Username to authenticate Poetry package sources. Required if source is provided.
+  virtualenvs-create:
+    required: false
+    default: 'true'
+    description: >
+      Whether Poetry should create virtual environments for projects.
+      When false, dependencies will be installed globally.
+  virtualenvs-in-project:
+    required: false
+    default: 'true'
+    description: >
+      Whether Poetry should create virtual environments inside the project directory.
+      When true, creates .venv folder in project root. When false, uses Poetry's default location.
+
+runs:
+  using: 'composite'
+  steps:
+    - name: '[poetry] install poetry if missing'
+      shell: bash
+      run: |
+        if command -v poetry &> /dev/null; then
+          echo "poetry already installed"
+        else
+          args=()
+          [[ "${{ inputs.poetry-version }}" ]] && args+=("--version" "${{ inputs.poetry-version }}")
+
+          curl -sSL https://install.python-poetry.org | python3 - ${args[@]:-}
+        fi
+
+    - name: '[poetry] installed version'
+      shell: bash
+      run: |
+        poetry --version
+
+    - name: '[poetry] setup source'
+      if: inputs.source != ''
+      shell: bash
+      run: |
+        poetry config http-basic.${{ inputs.source }} ${{ inputs.username }} ${{ inputs.password }}
+
+    - name: '[poetry] poetry configuration'
+      shell: bash
+      run: |
+        poetry config virtualenvs.create ${{ inputs.virtualenvs-create }}
+        poetry config virtualenvs.in-project ${{ inputs.virtualenvs-in-project }}

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "[WEB] Run TikTok Bot",
+        "request": "launch",
+        "type": "python",
+        "program": "${workspaceFolder}/tiktok/main.py",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      },
+      {
+        "name": "[ANDROID] Run TikTok Bot",
+        "request": "launch",
+        "type": "python",
+        "program": "${workspaceFolder}/tiktok/main.py",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "args": ["--android"]
+      }
+    ]
+  }

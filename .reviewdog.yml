@@ -1,0 +1,12 @@
+runner:
+  mypy:
+    cmd: "poetry run mypy --config-file pyproject.toml --show-error-codes tiktok/"
+    format: mypy
+    level: error
+    name: "mypy"
+
+  ruff-check:
+    cmd: "poetry run ruff check -q --output-format=rdjson tiktok/"
+    format: rdjson
+    level: error
+    name: "ruff"

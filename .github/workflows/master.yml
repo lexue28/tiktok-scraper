@@ -1,0 +1,56 @@
+name: Master
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      #----------------------------------------------
+      #       check-out repo
+      #----------------------------------------------
+      - name: "[PR] checkout code"
+        uses: actions/checkout@v4
+
+      #----------------------------------------------
+      #       install Python dependencies
+      #----------------------------------------------
+      - name: "[PR] install dependencies"
+        uses: "./.github/actions/install-python"
+
+      #----------------------------------------------
+      #       run tests
+      #----------------------------------------------
+      - name: "[PR] run tests"
+        run: |
+          poetry run pytest tests
+          
+  linters-backend:
+    runs-on: ubuntu-latest
+    steps:
+      #----------------------------------------------
+      #       check-out repo
+      #----------------------------------------------
+      - name: "[PR] checkout code"
+        uses: actions/checkout@v4
+
+      #----------------------------------------------
+      #       install python dependencies
+      #----------------------------------------------
+      - name: "[PR] install dependencies"
+        uses: "./.github/actions/install-python"
+
+      #----------------------------------------------
+      #       run linters
+      #----------------------------------------------
+      - name: "[PR] run linters"
+        uses: "./.github/actions/linters"
+        with:
+          runners: "mypy,ruff"

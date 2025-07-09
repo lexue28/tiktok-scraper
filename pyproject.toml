@@ -1,0 +1,142 @@
+[tool.poetry]
+name = "tiktok"
+version = "0.1.0"
+description = "A TikTok scraper"
+authors = ["Filippo Manzardo <filippommanzardo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.13"
+
+aiofiles = "^24.1.0"
+asyncpg = "^0.30.0"
+colorlog = "^6.9.0"
+fastapi = "^0.115.8"
+httpx = "^0.28.1"
+instructor = "^1.7.2"
+mitmproxy = "^11.1.0"
+pydantic = "^2.10.5"
+pydantic-settings = "^2.7.1"
+pure-python-adb = "^0.3.0.dev0"
+openai = "^1.61.1"
+opencv-python = "^4.11.0.86"
+orjson = "^3.10.15"
+questionary = "^2.1.0"
+uvicorn = "^0.34.0"
+pillow = "^11.1.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.14.1"
+poethepoet = "^0.32.1"
+pytest-asyncio = "^0.25.2"
+pytest = "^8.3.4"
+ruff = "^0.9.1"
+types-aiofiles = "^24.1.0.20241221"
+types-requests = "^2.32.0.20241016"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.poe.tasks]
+lint.sequence = ["ruff_fix", "ruff_format", "dmypy"]
+check.sequence = ["ruff_check", "dmypy"]
+lint.ignore_fail = true
+ruff_fix = "ruff check --fix ."
+ruff_check = "ruff check ."
+ruff_format = "ruff format ."
+dmypy = "dmypy run -- --config-file pyproject.toml --show-error-codes ."
+
+[tool.ruff]
+target-version = "py313"
+exclude = [
+    ".venv",
+    "node_modules",
+    "ssl-pinning-android",
+]
+
+lint.ignore = [
+    "D100",  # Missing docstring in public module
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D107",  # Missing docstring in __init__
+    "D200",  # One-line docstring should fit on one line with quotes
+    "D203",  # 1 blank line required before class docstring
+    "D212",  # Multi-line docstring summary should start at the first line
+    "D301",  # Use r""" if any backslashes in a docstring
+    "D401",  # First line of docstring should be in imperative mood
+    "D415",  # First line should end with a period, question mark, or exclamation point
+    "E501",  # Line too long
+    "W291",  # Trailing whitespace,
+    "D101",  # Missing docstring in public class
+    "E741",  # Ambiguous variable name: `l`
+
+]
+line-length = 100
+lint.select = [
+    "D",     # docstring rules
+    "E",     # pycodestyle errors
+    "F",     # pyflakes
+    "I",     # isort
+    "W",     # pycodestyle warnings
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401",  # Unused imports (allowed in __init__.py files)
+]
+"tests/**/*.py" = [
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+]
+"dbhelpers/**/*.py" = [
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+]
+"integration_tests/**/*.py" = [
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+]
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+exclude = ["./.venv", "ssl-pinning-android"]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+implicit_reexport = true
+no_implicit_optional = true
+strict_equality = true
+strict_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.pydantic-mypy]
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
+
+[[tool.mypy.overrides]]
+module = [
+    "asyncpg.*",
+    "rfc3339.*",
+    "google.*",
+    "apache_beam.*",
+    "aiocache.*",
+    "ppadb.*"
+]
+ignore_missing_imports = true

@@ -1,0 +1,29 @@
+name: "[python] install dependencies"
+description: "Install dependencies for Python"
+
+inputs:
+  python-version:
+    description: "Python version to use"
+    default: "3.13"
+
+runs:
+  using: "composite"
+  steps:
+
+    - name: "[python] install poetry"
+      uses: "./.github/actions/setup-poetry"
+      with:
+          poetry-version: "1.8.3"
+
+    - name: "[python] setup python"
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: "poetry"
+
+    - name: "[python] install dependencies"
+      shell: bash
+      run: |
+        poetry --version 
+        poetry check --lock 
+        poetry install -v --sync 

@@ -1,0 +1,31 @@
+---
+description: rules for working in the python scraper backend
+globs: 
+---
+
+You are a Python developer building an LLM-based bot designed to simulate human behavior on TikTok’s web interface. Your objective is to create a system that interacts with TikTok as naturally as possible, evading bot detection while automating tasks. Focus on architectural decisions and coding strategies, not on the actual code implementation yet.
+
+Key Directions:
+	1.	Understand the TikTok Web Environment:
+	•	Research the TikTok web page structure, including dynamic content loading, DOM elements, and potential anti-bot mechanisms.
+	•	Identify common user interactions (e.g., scrolling, clicking, video selection, commenting) that the bot needs to simulate.
+	2.	Choose an Automation Framework:
+	•	Evaluate and decide on an appropriate automation library (such as Selenium or Playwright) for controlling the browser.
+	•	Consider factors like headless vs. headed mode, ease of simulating human-like actions (mouse movement, random delays), and integration with Python.
+	3.	Simulate Human-like Behavior:
+	•	Plan strategies to mimic realistic behavior: randomize mouse movements, incorporate variable delays between actions, and simulate natural scrolling.
+	•	Consider using noise patterns or small randomized variations in actions to better emulate human usage.
+	4.	Integrate the LLM Component:
+	•	Define how the LLM will guide decision-making in real time (e.g., selecting content, generating responses).
+	•	Outline a plan to integrate LLM output with the UI automation layer, ensuring smooth communication between components.
+	5.	Implement Anti-bot Evasion Techniques:
+	•	Investigate methods to prevent detection, such as rotating user agents, leveraging proxies, and emulating common human navigation flows.
+	•	Outline error handling and fallback procedures if the bot is challenged (e.g., handling captchas or unexpected page layouts).
+	6.	Architect the System Modularly:
+	•	Break the project into clear modules: UI automation, LLM decision engine, behavior simulation, logging/error handling, and configuration.
+	•	Plan for logging and monitoring to track bot behavior and performance, enabling iterative improvements.
+	7.	Testing and Iteration:
+	•	Define approaches for testing the bot’s interactions to ensure they mimic human behavior convincingly.
+	•	Plan iterative refinement of the simulation logic based on observed behavior and evolving TikTok web structures.
+
+Provide a high-level plan that covers these areas and outlines the step-by-step approach to designing the bot. No actual code is required at this stage—just a clear, actionable roadmap for development.
