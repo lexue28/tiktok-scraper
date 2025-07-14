@@ -6,6 +6,7 @@ import instructor
 from openai import OpenAI
 from PIL import Image
 from pydantic import BaseModel, Field
+from tiktok.agent.config import AgentConfig
 
 _LOGGER = logging.getLogger(__name__)
 _T = TypeVar("_T", bound=BaseModel)
@@ -27,7 +28,8 @@ class Agent:
         self,
         openai_client: OpenAI,
         base_prompt: str,
-        behavior_context: str,
+        # behavior_context: str,
+        config: AgentConfig,
         image_size: tuple[int, int] = (120, 120),
     ):
         """
@@ -39,8 +41,11 @@ class Agent:
         """
         self.client = instructor.from_openai(openai_client)
         self.image_size = image_size
+
         # Format the base prompt with the behavior context
-        self.base_prompt = base_prompt.format(behavior_context=behavior_context)
+        # self.base_prompt = base_prompt.format(behavior_context=behavior_context)
+        self.base_prompt = base_prompt
+
         _LOGGER.debug(
             "[OpenAI] Initialized agent with base prompt length: %d", len(self.base_prompt)
         )
@@ -49,6 +54,22 @@ class Agent:
         self.memory = list[dict[str, str]]()  # Each entry is a dict with "role" and "content"
         # Set maximum allowed tokens for conversation memory.
         self.max_memory_tokens = 1500  # adjust as needed
+
+        self.config = config
+        # DIGGING
+        self.tq_like = config.tq_like
+        self.bq_like = config.bq_like
+
+        # FOLLOWING
+        self.follow = config.follow
+
+        # READING COMMENTS
+        self.load = config.load
+        self.comments_read = config.comments_read
+
+        # 7.86 MIN SESSIONS
+        self.session_sec = config.session_sec
+    
 
         def log_exception(exception: Exception) -> None:
             _LOGGER.error("[OpenAI] OpenAI API error: %s", str(exception))
@@ -88,12 +109,24 @@ Your task:
 
 Input: {prompt}
 
-For each video, use the exact 19-digit video_id provided in the prompt (e.g., "7518780802759511318").
+For each video, use the exact 19-digit value mapped to "id" provided in the prompt.
 Do NOT invent or shorten video IDs. Do NOT use labels like "video1", "video_3", or "action4".
-Your response must only include video_ids that were explicitly listed in the prompt.
+Your response must only include ids that were explicitly listed in the prompt.
+Please pay attention to this above, only valid numbers as video_id's please.
+Never output something like this: "video_id": "action_1"
+Remember that ids for videos and requests to endpoints 
+should only be composed of the 19 digits of the user id and not include any letters or underscores
 
 Remember to structure your response exactly according to the required model format. 
-"""
+
+The probability (in decimals) of liking is {self.tq_like}. 
+For following is {self.follow}, reading the top {self.comments_read} comments has a {self.load} chance.
+A decimal probability of 0.5 means 50% chance.
+If none of these are fulfilled please NOOP.
+
+"""  
+            print("HELP PRMOPT", prompt)
+            print("end here")
             # Construct the conversation messages including a trimmed version of stored memory.
             messages: Any = [{"role": "system", "content": self.base_prompt}]
             # Trim memory by removing oldest messages until under token limit.

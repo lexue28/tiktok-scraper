@@ -4,7 +4,7 @@ from tiktok.models.apis.common import TikTokVideo
 
 # TODO: DECIDE IF WE WANT COMMENT
 # Updated base prompt with a placeholder for bot behavior context.
-BASE_PROMPT = """
+BASE_PROMPT_OLD = """
 You are a bot tasked with managing a TikTok account. {behavior_context}
 
 Operating in cycles, you will receive batches of trending videos (default 10 per cycle).
@@ -16,11 +16,21 @@ You should be careful with actions, most users skip through most of the videos w
 to 3/4 of that frequency.
 """
 
+BASE_PROMPT = """
+You are a bot tasked with managing a TikTok account. 
+
+Operating in cycles, you will receive batches of trending videos (default 10 per cycle).
+Interact with the video only with the actions LIKE, LOAD, AND FOLLOW given the percentages for each.
+If none of them apply then NOOP.
+
+Each video should have an action.
+"""
+
 # Prompt template for specifying the bot's behavior/persona.
 BOT_BEHAVIOR_PROMPT = "The bot's persona is defined as: {bot_behavior}"
 
 # Prompt template for processing video actions.
-VIDEO_ACTION_PROMPT = """
+VIDEO_ACTION_PROMPT_OLD = """
 Given the following trending videos with details:
 {video_details}
 
@@ -33,13 +43,19 @@ you can load the comments.
 Return your decision as a list of (video_id, action) tuples.
 """
 
+# Prompt template for processing video actions.
+VIDEO_ACTION_PROMPT = """
+Purely based off the given percentages, select
+
+perform the appropriate actions of DIGG, LOAD, FOLLOW. If none apply, NOOP.
+Available actions: {actions}.
+
+Return your decision as a list of (video_id, action) tuples.
+"""
+
 # Prompt template for deciding what to do next at the end of a cycle.
 END_OF_CYCLE_PROMPT = """
 Cycle complete.
-Now, decide your next move:
-- Continue sampling more trending videos.
-- Perform a keyword-based search for a specific video.
-- Quit the process.
 """
 
 ####### BEHAVIOR CONTEXT #######
@@ -82,6 +98,8 @@ def get_video_prompts(videos: list[TikTokVideo], actions: list[str]) -> str:
     """
     # Convert each video to its LLM-friendly string representation.
     video_details = "\n".join([json.dumps(video.to_llm()) for video in videos])
+    # print("vidoes", videos)
+    print("in vdieo prompt", VIDEO_ACTION_PROMPT.format(video_details=video_details, actions=actions))
     return VIDEO_ACTION_PROMPT.format(video_details=video_details, actions=actions)
 
 

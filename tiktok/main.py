@@ -8,6 +8,7 @@ from pydantic import SecretStr
 
 from tiktok import log
 from tiktok.agent.agent import Agent
+from tiktok.agent.config import AgentConfig
 from tiktok.bot import prompt
 from tiktok.bot.android_bot import TikTokAndroidBot
 from tiktok.bot.config import BotConfig
@@ -22,14 +23,15 @@ async def web_main() -> None:
     """Main function."""
     # Attempt to load values from the .env file using our Config
     config = Config()
+    agent_config = AgentConfig()
     bot_config = BotConfig()
 
     # Cycles and batching
-    bot_config.max_cycles = 100
-    bot_config.trending_videos_process_batch = 10
-    bot_config.trending_videos_fetch_batch = 10
-    # sleep for between 5 and 10 seconds (adjust to minutes?)
-    bot_config.sleep_time = (5, 10)
+    # bot_config.max_cycles = 100
+    # bot_config.trending_videos_process_batch = 10
+    # bot_config.trending_videos_fetch_batch = 10
+    # # sleep for between 5 and 10 seconds (adjust to minutes?)
+    # bot_config.sleep_time = (5, 10)
 
     # Get required tokens and keys
     ms_token = (
@@ -55,18 +57,13 @@ async def web_main() -> None:
 
     # Define base prompt and behavior context for the agent
     base_prompt = """You are an AI assistant that helps interact with TikTok videos.
-Your role is to analyze videos and decide appropriate actions like commenting or liking.
-You should make decisions that help create engaging and positive interactions.
-{behavior_context}"""
-
-    # Define the behavior context that guides the agent's personality
-    behavior_context = prompt.TRUMP_PROMPT
+Given the decimal likelihood of performing each action, your role is to perform the actions to their corresponding probability."""
 
     # Create an OpenAI client instance
     openai_client = OpenAI(api_key=openai_key)
 
     # Instantiate the Agent with the OpenAI client, base prompt, and behavior context
-    agent = Agent(openai_client, base_prompt, behavior_context)
+    agent = Agent(openai_client, base_prompt, agent_config)
 
     # Create and run the TikTok bot
     bot = TikTokBot(

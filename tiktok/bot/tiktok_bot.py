@@ -96,13 +96,27 @@ class TikTokBot:
 
         # Initialize counters for overall video processing statistics.
         self.total_videos = 0
-        self.total_comments = 0
+        # self.total_comments = 0
+        self.total_follows = 0
         self.total_diggs = 0
         self.total_loads = 0
 
         # Lifecycle management
         self.max_cycles = config.max_cycles
         self.sleep_time = config.sleep_time
+
+        # # DIGGING
+        # self.tq_like = config.tq_like
+        # self.bq_like = config.bq_like
+
+        # # FOLLOWING
+        # self.follow = config.follow
+
+        # # READING COMMENTS
+        # self.comments_read = config.comments_read
+
+        # # 7.86 MIN SESSIONS
+        # self.session_sec = config.session_sec
 
         # Generate a unique session id for this run and initialize detailed logging.
         self.session_id = str(uuid.uuid4())
@@ -111,7 +125,7 @@ class TikTokBot:
             start_time=datetime.now(),
             cycles=[],
             total_videos=0,
-            total_comments=0,
+            total_follows=0,
             total_diggs=0,
             total_loads=0,
             config=config.model_dump(),
@@ -119,7 +133,7 @@ class TikTokBot:
         self.current_cycle: CycleStats | None = None
 
         # Setup logging directory and file.
-        self.log_dir = Path("logs")
+        self.log_dir = Path("logs_c3")
         self.log_dir.mkdir(exist_ok=True)
         self.log_file = (
             self.log_dir / f"bot_activity_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -236,7 +250,7 @@ class TikTokBot:
                 cycle_id=cycle,
                 start_time=datetime.now(),
                 videos_processed=0,
-                comments_made=0,
+                # comments_made=0,
                 diggs_made=0,
                 follows_made=0,
                 loads_made=0,
@@ -274,24 +288,25 @@ class TikTokBot:
                 decision_video = await self.agent.decide_action(
                     get_video_prompts(videos, list(VideoActions.__members__.keys())), VideoDecision
                 )
-
+                print("decision video", decision_video)
+                print("vidoes collected", self.current_cycle.videos_collected)
+                print("get", get_video_prompts(videos, list(VideoActions.__members__.keys())))
                 if decision_video is None:
                     _LOGGER.warning("[Decision] No decision made for batch %d", idx)
                     continue
                 
-                print("d", decision_video)
-                print("di", decision_video.actions)
                 success = True
                 # Process the decision for each video in the batch.
+                print("items", decision_video.actions.items())
                 for video_id, decision in decision_video.actions.items():
-                    print("vsdk", decision_video.actions.items())
-                    print("video id d", video_id)
                     _LOGGER.info(
                         "[Decision] VIDEO %s: %s, %s",
                         video_id,
                         decision.action,
                         decision.reason,
                     )
+                    video_id = self.current_cycle.videos_collected[0]
+                    print("new video id", video_id)
                     match decision.action:
                         case VideoActions.NOOP:
                             pass
@@ -342,37 +357,40 @@ class TikTokBot:
 
             # Update total statistics in the global activity log.
             self.activity_log.total_videos = self.total_videos
-            self.activity_log.total_comments = self.total_comments
+            # self.activity_log.total_comments = self.total_comments
+            self.activity_log.total_follows = self.total_follows
             self.activity_log.total_diggs = self.total_diggs
-            self.activity_log.total_loads = self.total_loads
+            self.activity_log.total_loads = self.total_loads            
+
 
             await self.save_logs()
 
             _LOGGER.info(
-                "[Cycle] Complete - Videos: %d, Comments: %d, Diggs: %d, Loads: %d",
+                "[Cycle] Complete - Videos: %d, Follows: %d, Diggs: %d, Loads: %d",
                 self.current_cycle.videos_processed,
-                self.current_cycle.comments_made,
+                self.current_cycle.follows_made,
                 self.current_cycle.diggs_made,
                 self.current_cycle.loads_made,
             )
 
             # At the end of a cycle, decide what the next step should be:
             # continue with another cycle, search by keyword, or quit.
-            decision_cycle = await self.agent.decide_action(
-                get_cycle_prompt(cycle, list(EndOfCycleActions.__members__.keys())),
-                EndOfCycleDecision,
-            )
+
+            # decision_cycle = await self.agent.decide_action(
+            #     get_cycle_prompt(cycle, list(EndOfCycleActions.__members__.keys())),
+            #     EndOfCycleDecision,
+            # )
 
             # Execute next-cycle decision based on the agent's response.
-            match decision_cycle:
-                case EndOfCycleActions.CONTINUE:
-                    _LOGGER.info("[Cycle] Continuing to next cycle")
-                case EndOfCycleActions.QUIT:
-                    _LOGGER.info("[Cycle] Quitting bot operation")
-                    break
-                case EndOfCycleActions.SEARCH:
-                    _LOGGER.info("[Cycle] Searching for specific content")
-                    continue
+            # match decision_cycle:
+            #     case EndOfCycleActions.CONTINUE:
+            #         _LOGGER.info("[Cycle] Continuing to next cycle")
+            #     case EndOfCycleActions.QUIT:
+            #         _LOGGER.info("[Cycle] Quitting bot operation")
+            #         break
+            #     case EndOfCycleActions.SEARCH:
+            #         _LOGGER.info("[Cycle] Searching for specific content")
+            #         continue
 
             # Check if the maximum number of cycles has been reached.
             if self.max_cycles is not None and cycle >= self.max_cycles:
@@ -461,6 +479,7 @@ class TikTokBot:
         :return: True if the like action was successful, False otherwise.
         """
         params = TikTokParams.default_web()
+        print("video_id here", video_id)
         try:
             # Execute the like action on the provided video.
             response = await self.client.digg_video(video_id=AwemeId(video_id), params=params)
@@ -492,7 +511,7 @@ class TikTokBot:
         params = TikTokParams.default_web()
         try:
             # Execute the like action on the provided video.
-            print("heh", AwemeId(video_id), video_id)
+            print("listing", AwemeId(video_id), video_id)
             response = await self.client.list_comments(video_id=AwemeId(video_id), params=params)
             # Log a successful API response.
             await self.log_api_response(

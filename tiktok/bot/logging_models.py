@@ -33,7 +33,7 @@ class CycleStats(BaseModel):
     start_time: datetime
     end_time: datetime | None = None
     videos_processed: int
-    comments_made: int
+    # comments_made: int
     diggs_made: int
     follows_made: int
     loads_made: int
@@ -50,7 +50,7 @@ class BotActivityLog(BaseModel):
     cycles: list[CycleStats] = Field(default_factory=list)
     actions: list[VideoActionLog] = Field(default_factory=list)
     total_videos: int
-    total_comments: int
+    total_follows: int
     total_diggs: int
     total_loads: int
     config: dict[str, Any]

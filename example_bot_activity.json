@@ -3795,7 +3795,7 @@
       5,
       10
     ],
-    "base_prompt": "\nYou are a bot tasked with managing a TikTok account. {behavior_context}\n\nOperating in cycles, you will receive batches of trending videos (default 10 per cycle).\nFor each video, examine its details and choose an appropriate action from the available options (e.g. NOOP, LIKE, COMMENT).\nAfter processing all videos in a cycle, determine whether to continue sampling, perform a keyword-based search, or quit.\n\nMake sure to follow the behavior provided by the user.\nYou should be careful with actions, most users skip through most of the videos while liking some times and\nrarely comment.\n",
+    "base_prompt": "You are an AI assistant that helps interact with TikTok videos.\nGiven the decimal likelihood of performing each action, your role is to perform the actions to their corresponding probability.",
     "video_action_prompt": "\nGiven the following trending videos with details:\n{video_details}\n\nSelect the most appropriate action for each video.\nAvailable actions: {actions}.\nYou should NOOP most of the time, and digg videos you like. If you're incredible interested,\nyou can comment.\n\nReturn your decision as a list of (video_id, action) tuples.\n",
     "end_of_cycle_prompt": "\nCycle complete.\nNow, decide your next move:\n- Continue sampling more trending videos.\n- Perform a keyword-based search for a specific video.\n- Quit the process.\n"
   }
