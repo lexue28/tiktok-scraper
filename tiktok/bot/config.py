@@ -18,15 +18,15 @@ class BotConfig(BaseSettings):
     video_action_prompt: str = VIDEO_ACTION_PROMPT
     end_of_cycle_prompt: str = END_OF_CYCLE_PROMPT
 
-    # # DIGGING
-    # tq_like: float = 0.14
-    # bq_like: float = 0.06
+    # DIGGING
+    tq_like: float = 0.14
+    bq_like: float = 0.06
 
-    # # FOLLOWING
-    # follow: float = 0.015
+    # FOLLOWING
+    follow: float = 0.015
 
-    # # READING COMMENTS
-    # comments_read: int = 10
+    # READING COMMENTS
+    comments_read: int = 10
 
-    # # 7.86 MIN SESSIONS
-    # session_sec: float = 471.6
+    # 7.86 MIN SESSIONS
+    session_sec: float = 471.6

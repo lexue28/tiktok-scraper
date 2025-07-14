@@ -11,7 +11,7 @@ class AgentConfig(BaseSettings):
     # FOLLOWING
     follow: float = 0.015
 
-    # READING COMMENTS (to feed to llm)
+    # READING COMMENTS (to feed)
     load: float = 1
     comments_read: int = 10
 

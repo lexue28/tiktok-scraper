@@ -89,7 +89,7 @@ class TikTokBot:
         )
 
         # Store the decision-making agent.
-        self.agent = agent
+        # self.agent = agent
 
         # Save bot configuration such as number of cycles and batch sizes.
         self.config = config
@@ -105,18 +105,18 @@ class TikTokBot:
         self.max_cycles = config.max_cycles
         self.sleep_time = config.sleep_time
 
-        # # DIGGING
-        # self.tq_like = config.tq_like
-        # self.bq_like = config.bq_like
+        # DIGGING
+        self.tq_like = config.tq_like
+        self.bq_like = config.bq_like
 
-        # # FOLLOWING
-        # self.follow = config.follow
+        # FOLLOWING
+        self.follow = config.follow
 
-        # # READING COMMENTS
-        # self.comments_read = config.comments_read
+        # READING COMMENTS
+        self.comments_read = config.comments_read
 
-        # # 7.86 MIN SESSIONS
-        # self.session_sec = config.session_sec
+        # 7.86 MIN SESSIONS
+        self.session_sec = config.session_sec
 
         # Generate a unique session id for this run and initialize detailed logging.
         self.session_id = str(uuid.uuid4())
@@ -185,7 +185,6 @@ class TikTokBot:
         video_id: str,
         action_type: str,
         success: bool,
-        details: str | None = None,
         api_response: APIResponse | None = None,
     ) -> None:
         """
@@ -206,7 +205,6 @@ class TikTokBot:
             action_type=action_type,
             timestamp=datetime.now(),
             success=success,
-            details=details,
             api_response=api_response.model_dump(mode="json") if api_response else None,
         )
         # Record the action in the current cycle.
@@ -285,68 +283,85 @@ class TikTokBot:
                 )
 
                 # Generate a prompt for the current batch of videos
-                decision_video = await self.agent.decide_action(
-                    get_video_prompts(videos, list(VideoActions.__members__.keys())), VideoDecision
-                )
-                print("decision video", decision_video)
-                print("vidoes collected", self.current_cycle.videos_collected)
-                print("get", get_video_prompts(videos, list(VideoActions.__members__.keys())))
-                if decision_video is None:
-                    _LOGGER.warning("[Decision] No decision made for batch %d", idx)
-                    continue
-                
+                # decision_video = await self.agent.decide_action(
+                #     get_video_prompts(videos, list(VideoActions.__members__.keys())), VideoDecision
+                # )
+                # Decide on action
+
+                video_id = self.current_cycle.videos_collected[0]
+                actions = []
+                rand = random.random()
+                print("rand", rand)
                 success = True
+                if rand < self.tq_like:
+                    success = await self.digg_video(video_id)
+                    self.current_cycle.diggs_made += int(success)
+                    actions.append((video_id, VideoActions.DIGG))
+                if rand < self.follow:
+                    video = next((v for v in trending_videos if v.id == video_id), None)
+
+                    if video is not None and video.author.id is not None:
+                        success = await self.follow_user(video.author.id)
+                        self.current_cycle.follows_made += int(success)
+                        actions.append((video_id, VideoActions.FOLLOW))
+
+                # load first ten comments for each
+                success = await self.list_comments(video_id)
+                self.current_cycle.loads_made += int(success)
+
+                # if decision_video is None:
+                #     _LOGGER.warning("[Decision] No decision made for batch %d", idx)
+                #     continue
+                
                 # Process the decision for each video in the batch.
-                print("items", decision_video.actions.items())
-                for video_id, decision in decision_video.actions.items():
-                    _LOGGER.info(
-                        "[Decision] VIDEO %s: %s, %s",
-                        video_id,
-                        decision.action,
-                        decision.reason,
-                    )
-                    video_id = self.current_cycle.videos_collected[0]
-                    print("new video id", video_id)
-                    match decision.action:
-                        case VideoActions.NOOP:
-                            pass
-                        case VideoActions.DIGG:
-                            # If the decision is DIGG, attempt to like the video.
-                            success = await self.digg_video(video_id)
-                            self.current_cycle.diggs_made += int(success)
+                # for video_id, decision in decision_video.actions.items():
+                #     _LOGGER.info(
+                #         "[Decision] VIDEO %s: %s, %s",
+                #         video_id,
+                #         decision.action,
+                #         decision.reason,
+                #     )
+                #     video_id = self.current_cycle.videos_collected[0]
+                #     print("new video id", video_id)
+                #     match decision.action:
+                #         case VideoActions.NOOP:
+                #             pass
+                #         case VideoActions.DIGG:
+                #             # If the decision is DIGG, attempt to like the video.
+                #             success = await self.digg_video(video_id)
+                #             self.current_cycle.diggs_made += int(success)
 
-                        # case VideoActions.COMMENT:
-                        #     # Generate a comment for the video using the AI agent.
-                        #     comment = await self.generate_comment(video_id)
+                #         # case VideoActions.COMMENT:
+                #         #     # Generate a comment for the video using the AI agent.
+                #         #     comment = await self.generate_comment(video_id)
 
-                        #     if comment:
-                        #         # Attempt to post the generated comment.
-                        #         success = await self.post_comment(video_id, comment) is not None
-                        #         self.current_cycle.comments_made += int(success)
-                        case VideoActions.FOLLOW:
-                            # Try following the video's author if possible.
-                            video = next((v for v in trending_videos if v.id == video_id), None)
+                #         #     if comment:
+                #         #         # Attempt to post the generated comment.
+                #         #         success = await self.post_comment(video_id, comment) is not None
+                #         #         self.current_cycle.comments_made += int(success)
+                #         case VideoActions.FOLLOW:
+                #             # Try following the video's author if possible.
+                #             video = next((v for v in trending_videos if v.id == video_id), None)
 
-                            if video is not None and video.author.id is not None:
-                                success = await self.follow_user(video.author.id)
-                                self.current_cycle.follows_made += int(success)
-                        case VideoActions.LOAD:
-                            # If the decision is load, attempt to like comments
-                            success = await self.list_comments(video_id)
-                            self.current_cycle.loads_made += int(success)
-                        case _:
-                            _LOGGER.warning("[Decision] Unknown action: %s", decision.action)
+                #             if video is not None and video.author.id is not None:
+                #                 success = await self.follow_user(video.author.id)
+                #                 self.current_cycle.follows_made += int(success)
+                #         case VideoActions.LOAD:
+                #             # If the decision is load, attempt to like comments
+                #             success = await self.list_comments(video_id)
+                #             self.current_cycle.loads_made += int(success)
+                #         case _:
+                #             _LOGGER.warning("[Decision] Unknown action: %s", decision.action)
 
                 # Update number of videos processed in the current cycle.
                 self.current_cycle.videos_processed += len(videos)
 
                 # Log the action for each video in the batch.
-                for video_id, decision in decision_video.actions.items():
+                for video_id, action in actions:
                     await self.log_action(
                         video_id=video_id,
-                        action_type=decision.action,
+                        action_type=action,
                         success=success,
-                        details=decision.reason,
                     )
 
                 # Add a delay between batches.
@@ -397,78 +412,78 @@ class TikTokBot:
                 _LOGGER.info("[Cycle] Maximum cycles reached")
                 break
 
-    async def generate_comment(self, video_id: str) -> str | None:
-        """
-        Generate a relevant comment for a given video using the AI agent.
+    # async def generate_comment(self, video_id: str) -> str | None:
+    #     """
+    #     Generate a relevant comment for a given video using the AI agent.
 
-        :param video_id: The identifier of the video for which to generate a comment.
+    #     :param video_id: The identifier of the video for which to generate a comment.
 
-        :return: The generated comment text, or None if generation fails.
-        """
-        _LOGGER.info("[Comment] Generating comment for video %s", video_id)
+    #     :return: The generated comment text, or None if generation fails.
+    #     """
+    #     _LOGGER.info("[Comment] Generating comment for video %s", video_id)
 
-        class _Comment(BaseModel):
-            # Nested model to parse the comment generated by the AI.
-            comment: str
+    #     class _Comment(BaseModel):
+    #         # Nested model to parse the comment generated by the AI.
+    #         comment: str
 
-        try:
-            # Create a simple prompt for comment generation.
-            prompt = f"Generate a relevant, engaging comment for video {video_id}"
-            comment_text = await self.agent.decide_action(prompt, _Comment)
-            if comment_text is None:
-                return None
+    #     try:
+    #         # Create a simple prompt for comment generation.
+    #         prompt = f"Generate a relevant, engaging comment for video {video_id}"
+    #         comment_text = await self.agent.decide_action(prompt, _Comment)
+    #         if comment_text is None:
+    #             return None
 
-            _LOGGER.info(
-                "[Comment] Generated comment for video %s: %s",
-                video_id,
-                comment_text.comment[:50] + "..."
-                if len(comment_text.comment) > 50
-                else comment_text.comment,
-            )
+    #         _LOGGER.info(
+    #             "[Comment] Generated comment for video %s: %s",
+    #             video_id,
+    #             comment_text.comment[:50] + "..."
+    #             if len(comment_text.comment) > 50
+    #             else comment_text.comment,
+    #         )
 
-            return comment_text.comment
-        except Exception as e:
-            _LOGGER.error(
-                "[Error - Comment] Failed to generate comment for video %s: %s", video_id, repr(e)
-            )
-            return None
+    #         return comment_text.comment
+    #     except Exception as e:
+    #         _LOGGER.error(
+    #             "[Error - Comment] Failed to generate comment for video %s: %s", video_id, repr(e)
+    #         )
+    #         return None
 
-    async def post_comment(self, video_id: str, comment_text: str) -> Comment | None:
-        """
-        Post a generated comment on a video using the TikTok API.
+    # async def post_comment(self, video_id: str, comment_text: str) -> Comment | None:
+    #     """
+    #     Post a generated comment on a video using the TikTok API.
 
-        :param video_id: The ID of the video to comment on.
-        :param comment_text: The comment text to post.
+    #     :param video_id: The ID of the video to comment on.
+    #     :param comment_text: The comment text to post.
 
-        :return: The Comment object returned by the API upon success, or None if failed.
-        """
-        params = TikTokParams.default_web()
-        try:
-            # Call the TikTok API to publish the comment.
-            response = await self.client.publish_comment(
-                video_id=AwemeId(video_id), comment=comment_text, params=params
-            )
-            # Log successful API response.
-            await self.log_api_response(
-                endpoint="publish_comment",
-                success=True,
-                response_id=f"comment_{video_id}",
-                response_data=response.model_dump(),
-            )
-            _LOGGER.info("[Action] Posted comment on video %s: %s", video_id, comment_text)
-            return response.comment
-        except Exception as e:
-            # Log failure details for debugging.
-            await self.log_api_response(
-                endpoint="publish_comment",
-                success=False,
-                response_id=f"comment_{video_id}",
-                error=repr(e),
-            )
-            _LOGGER.error(
-                "[Error - Comment] Error posting comment on video %s: %s", video_id, repr(e)
-            )
-            return None
+    #     :return: The Comment object returned by the API upon success, or None if failed.
+    #     """
+    #     params = TikTokParams.default_web()
+    #     try:
+    #         # Call the TikTok API to publish the comment.
+    #         response = await self.client.publish_comment(
+    #             video_id=AwemeId(video_id), comment=comment_text, params=params
+    #         )
+    #         # Log successful API response.
+    #         await self.log_api_response(
+    #             endpoint="publish_comment",
+    #             success=True,
+    #             response_id=f"comment_{video_id}",
+    #             response_data=response.model_dump(),
+    #         )
+    #         _LOGGER.info("[Action] Posted comment on video %s: %s", video_id, comment_text)
+    #         return response.comment
+    #     except Exception as e:
+    #         # Log failure details for debugging.
+    #         await self.log_api_response(
+    #             endpoint="publish_comment",
+    #             success=False,
+    #             response_id=f"comment_{video_id}",
+    #             error=repr(e),
+    #         )
+    #         _LOGGER.error(
+    #             "[Error - Comment] Error posting comment on video %s: %s", video_id, repr(e)
+    #         )
+    #         return None
 
     async def digg_video(self, video_id: str) -> bool:
         """
