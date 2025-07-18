@@ -20,8 +20,8 @@ def download_tiktok(post_id: str, video_url: str, output_dir: str = "downloads")
         ydl.download([video_url])
 
 post_meta = {
-    "id": "7516123586508197142",
-    "link": "https://www.tiktok.com/@zanno_tw/video/7516123586508197142"
+    "id": "7526086824318553366",
+    "link": "https://www.tiktok.com/@egidiogioia2/video/7526086824318553366"
 }
 
 download_tiktok(post_id=post_meta["id"], video_url=post_meta["link"])
