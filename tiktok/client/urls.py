@@ -15,7 +15,7 @@ class Urls(StrEnum):
     # Comment
     GET_COMMENTS = "/api/comment/list/"
     DIGG_COMMENT = "/api/comment/digg/"
-    POST_COMMENT = "/api/comment/publish/"
+    # POST_COMMENT = "/api/comment/publish/"
 
     # Search
     FULL_SEARCH = "/api/search/general/full/"

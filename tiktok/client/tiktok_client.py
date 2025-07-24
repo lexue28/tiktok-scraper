@@ -10,13 +10,12 @@ from tiktok.client.urls import Urls, standard_headers
 from tiktok.models.apis.comment import (
     CommentDiggResponse,
     CommentListResponse,
-    CommentPublishResponse,
 )
 from tiktok.models.apis.details import VideoDetailsResponse
 from tiktok.models.apis.digg import DiggResponse
 from tiktok.models.apis.follow import FollowResponse
 from tiktok.models.apis.search import SearchResponse
-from tiktok.models.apis.trending import TrendingResponse
+from tiktok.models.apis.trending import SimulateWatchResponse, TrendingResponse
 from tiktok.models.params.base import TikTokParams
 from tiktok.models.params.comment import CommentDiggParams, CommentParams, CommentPublishParams
 from tiktok.models.params.details import VideoDetailsParams
@@ -85,6 +84,7 @@ class TikTokClient:
 
         return cast(dict[str, Any], response.json())
 
+
     async def get_trending(self, params: TikTokParams) -> TrendingResponse:
         """Get the trending videos."""
         _LOGGER.info(
@@ -144,25 +144,6 @@ class TikTokClient:
         )
         return CommentDiggResponse.model_validate(response)
 
-    async def publish_comment(
-        self, comment: str, video_id: AwemeId, params: TikTokParams
-    ) -> CommentPublishResponse:
-        """Publish a comment."""
-        _LOGGER.info(
-            "[API Call] Publishing comment -> [comment: %s, video_id: %s]",
-            comment,
-            video_id,
-        )
-        publish_comment_params = CommentPublishParams.with_video_id(
-            comment=comment, video_id=video_id, params=params
-        )
-        response = await self._execute_request(
-            method="POST",
-            url=Urls.POST_COMMENT,
-            params=publish_comment_params.model_dump(by_alias=True, exclude_unset=True),
-        )
-        return CommentPublishResponse.model_validate(response)
-
     async def search_keyword(self, keyword: str, params: TikTokParams) -> SearchResponse:
         """Search for videos."""
         _LOGGER.info(
@@ -206,3 +187,53 @@ class TikTokClient:
             params=details_params.model_dump(by_alias=True, exclude_unset=True),
         )
         return VideoDetailsResponse.model_validate(response)
+
+    async def simulate_watch(
+        self, video_id: AwemeId, play_adr: str, params: TikTokParams
+    ) -> SimulateWatchResponse:  # noqa: F821
+        """Get the details of a video."""
+        _LOGGER.info(
+            "[API Call] Simulating Watch -> [video_id: %s]",
+            video_id,
+        )
+        response = await self._execute_sim(
+            url=play_adr,
+        )
+        print("url", response)
+        return SimulateWatchResponse.model_validate(response)
+
+    async def _execute_sim(
+        self, url: str
+    ) -> int:
+        """
+        Make a raw GET request to a TikTok video play_addr CDN URL,
+        with the correct cookies and headers, but NO extra params or signing.
+
+        Returns the HTTP status code.
+        """
+        headers = standard_headers(self.user_agent, self.csrf_token)
+        cookies = {
+            "tt_csrf_token": self.csrf_token,
+            "msToken": self.ms_token.get_secret_value(),
+            "sessionid": self.session_id,
+        }
+
+        response = await self.client.get(
+            url,
+            headers=headers,
+            cookies=cookies
+            # DO NOT add params=!
+        )
+
+         # TODO: TikTok responds to some failures with a 200 but empty body
+        if response.text == "":
+            response.status_code = 400
+
+        response.raise_for_status()
+
+        # Update msToken from cookies
+        if "msToken" in response.cookies:
+            self.ms_token = SecretStr(response.cookies["msToken"])
+
+        return response.status_code
+

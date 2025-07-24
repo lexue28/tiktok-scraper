@@ -153,4 +153,4 @@ cython_debug/
 **/secrets.auto.tfvars.json
 
 # Logs
-logs/
+# logs*/

@@ -7,10 +7,6 @@ from ppadb.client import Client as AdbClient
 from pydantic import SecretStr
 
 from tiktok import log
-from tiktok.agent.agent import Agent
-from tiktok.agent.config import AgentConfig
-from tiktok.bot import prompt
-from tiktok.bot.android_bot import TikTokAndroidBot
 from tiktok.bot.config import BotConfig
 from tiktok.bot.tiktok_bot import TikTokBot
 from tiktok.client.tiktok_client import TikTokClient
@@ -23,15 +19,7 @@ async def web_main() -> None:
     """Main function."""
     # Attempt to load values from the .env file using our Config
     config = Config()
-    agent_config = AgentConfig()
     bot_config = BotConfig()
-
-    # Cycles and batching
-    # bot_config.max_cycles = 100
-    # bot_config.trending_videos_process_batch = 10
-    # bot_config.trending_videos_fetch_batch = 10
-    # # sleep for between 5 and 10 seconds (adjust to minutes?)
-    # bot_config.sleep_time = (5, 10)
 
     # Get required tokens and keys
     ms_token = (
@@ -49,28 +37,14 @@ async def web_main() -> None:
         if config.csrf_token is not None
         else await questionary.password("Enter your csrf_token:").ask_async()
     )
-    openai_key = (
-        config.openai_api_key.get_secret_value()
-        if config.openai_api_key is not None
-        else await questionary.password("Enter your OpenAI API key:").ask_async()
-    )
-
-    # Define base prompt and behavior context for the agent
-    base_prompt = """You are an AI assistant that helps interact with TikTok videos.
-Given the decimal likelihood of performing each action, your role is to perform the actions to their corresponding probability."""
-
-    # Create an OpenAI client instance
-    openai_client = OpenAI(api_key=openai_key)
 
     # Instantiate the Agent with the OpenAI client, base prompt, and behavior context
-    agent = Agent(openai_client, base_prompt, agent_config)
 
     # Create and run the TikTok bot
     bot = TikTokBot(
         ms_token=SecretStr(ms_token),
         session_id=session_id,
         csrf_token=csrf_token,
-        agent=agent,
         config=bot_config,
     )
 
@@ -80,93 +54,93 @@ Given the decimal likelihood of performing each action, your role is to perform 
         _LOGGER.info("Bot stopped by user")
     except Exception as e:
         _LOGGER.error("Bot stopped due to error: %s", repr(e))
-    finally:
-        await agent.close()
+    # finally:
+    #     await agent.close()
 
 
-async def android_main() -> None:
-    """Android bot main function."""
-    # Attempt to load values from the .env file using our Config
-    config = Config()
+# async def android_main() -> None:
+#     """Android bot main function."""
+#     # Attempt to load values from the .env file using our Config
+#     config = Config()
 
-    # Get required tokens and keys
-    ms_token = (
-        config.ms_token.get_secret_value()
-        if config.ms_token is not None
-        else await questionary.password("Enter your ms_token:").ask_async()
-    )
-    session_id = (
-        config.session_id
-        if config.session_id is not None
-        else await questionary.text("Enter your session_id:").ask_async()
-    )
-    csrf_token = (
-        config.csrf_token
-        if config.csrf_token is not None
-        else await questionary.password("Enter your csrf_token:").ask_async()
-    )
-    openai_key = (
-        config.openai_api_key.get_secret_value()
-        if config.openai_api_key is not None
-        else await questionary.password("Enter your OpenAI API key:").ask_async()
-    )
+#     # Get required tokens and keys
+#     ms_token = (
+#         config.ms_token.get_secret_value()
+#         if config.ms_token is not None
+#         else await questionary.password("Enter your ms_token:").ask_async()
+#     )
+#     session_id = (
+#         config.session_id
+#         if config.session_id is not None
+#         else await questionary.text("Enter your session_id:").ask_async()
+#     )
+#     csrf_token = (
+#         config.csrf_token
+#         if config.csrf_token is not None
+#         else await questionary.password("Enter your csrf_token:").ask_async()
+#     )
+#     openai_key = (
+#         config.openai_api_key.get_secret_value()
+#         if config.openai_api_key is not None
+#         else await questionary.password("Enter your OpenAI API key:").ask_async()
+#     )
 
-    # Define base prompt and behavior context for the agent
-    base_prompt = """You are an AI assistant that helps interact with TikTok videos.
-Your role is to analyze videos and decide appropriate actions like commenting or liking.
-You should make decisions that help create engaging and positive interactions.
-{behavior_context}"""
+#     # Define base prompt and behavior context for the agent
+#     base_prompt = """You are an AI assistant that helps interact with TikTok videos.
+# Your role is to analyze videos and decide appropriate actions like commenting or liking.
+# You should make decisions that help create engaging and positive interactions.
+# {behavior_context}"""
 
-    # Define the behavior context that guides the agent's personality
-    behavior_context = prompt.TRUMP_PROMPT
+#     # Define the behavior context that guides the agent's personality
+#     behavior_context = prompt.TRUMP_PROMPT
 
-    # Create an OpenAI client instance
-    openai_client = OpenAI(api_key=openai_key)
+#     # Create an OpenAI client instance
+#     openai_client = OpenAI(api_key=openai_key)
 
-    # Instantiate the Agent with the OpenAI client, base prompt, and behavior context
-    agent = Agent(openai_client, base_prompt, behavior_context)
+#     # Instantiate the Agent with the OpenAI client, base prompt, and behavior context
+#     agent = Agent(openai_client, base_prompt, behavior_context)
 
-    # Connect to ADB and get device
-    adb_client = AdbClient(host="127.0.0.1", port=5037)
-    devices = adb_client.devices()
-    if devices:
-        device = devices[0]
-        _LOGGER.info(f"Using device: {device.get_serial_no()}")
-    else:
-        # Prompt for the ADB device name (or default to the first connected device)
-        device_name = await questionary.text(
-            "Enter your ADB device name (leave empty to use first detected device):"
-        ).ask_async()
+#     # Connect to ADB and get device
+#     adb_client = AdbClient(host="127.0.0.1", port=5037)
+#     devices = adb_client.devices()
+#     if devices:
+#         device = devices[0]
+#         _LOGGER.info(f"Using device: {device.get_serial_no()}")
+#     else:
+#         # Prompt for the ADB device name (or default to the first connected device)
+#         device_name = await questionary.text(
+#             "Enter your ADB device name (leave empty to use first detected device):"
+#         ).ask_async()
 
-        if device_name:
-            device = adb_client.device(device_name)
-            if not device:
-                _LOGGER.error(f"Device {device_name} not found!")
-                return
+#         if device_name:
+#             device = adb_client.device(device_name)
+#             if not device:
+#                 _LOGGER.error(f"Device {device_name} not found!")
+#                 return
 
-    # Create TikTok client for API operations
-    tiktok_client = TikTokClient(
-        ms_token=SecretStr(ms_token),
-        session_id=session_id,
-        csrf_token=csrf_token,
-    )
+#     # Create TikTok client for API operations
+#     tiktok_client = TikTokClient(
+#         ms_token=SecretStr(ms_token),
+#         session_id=session_id,
+#         csrf_token=csrf_token,
+#     )
 
-    # Create and initialize the Android bot
-    bot = TikTokAndroidBot(
-        device=device,
-        agent=agent,
-        tiktok_client=tiktok_client,
-    )
+#     # Create and initialize the Android bot
+#     bot = TikTokAndroidBot(
+#         device=device,
+#         agent=agent,
+#         tiktok_client=tiktok_client,
+#     )
 
-    try:
-        await bot.run()
-    except KeyboardInterrupt:
-        _LOGGER.info("Bot stopped by user")
-    except Exception as e:
-        _LOGGER.error("Bot stopped due to error: %s", repr(e))
-        raise
-    finally:
-        await agent.close()
+#     try:
+#         await bot.run()
+#     except KeyboardInterrupt:
+#         _LOGGER.info("Bot stopped by user")
+#     except Exception as e:
+#         _LOGGER.error("Bot stopped due to error: %s", repr(e))
+#         raise
+#     finally:
+#         await agent.close()
 
 
 if __name__ == "__main__":

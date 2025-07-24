@@ -1,4 +1,5 @@
 from datetime import datetime
+from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, Field
@@ -38,6 +39,7 @@ class CycleStats(BaseModel):
     follows_made: int
     loads_made: int
     videos_collected: list[str]
+    videos_watched: list[str]
     actions: list[VideoActionLog]
     api_responses: list[APIResponse]
 
@@ -54,3 +56,10 @@ class BotActivityLog(BaseModel):
     total_diggs: int
     total_loads: int
     config: dict[str, Any]
+
+class VideoActions(StrEnum):
+    """
+    A decision about what action to take.
+    """
+    DIGG = "digg"
+    FOLLOW = "follow"

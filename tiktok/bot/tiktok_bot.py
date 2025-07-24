@@ -27,14 +27,10 @@ from typing import Any, Dict
 
 from pydantic import BaseModel, SecretStr
 
-from tiktok.agent.agent import Agent
-from tiktok.agent.models import EndOfCycleActions, EndOfCycleDecision, VideoActions, VideoDecision
 from tiktok.bot.config import BotConfig
-from tiktok.bot.logging_models import APIResponse, BotActivityLog, CycleStats, VideoActionLog
-from tiktok.bot.prompt import get_cycle_prompt, get_video_prompts
+from tiktok.bot.logging_models import APIResponse, BotActivityLog, CycleStats, VideoActionLog, VideoActions
 from tiktok.bot.utils import chunkize
 from tiktok.client.tiktok_client import TikTokClient
-from tiktok.models.apis.comment import Comment
 from tiktok.models.apis.trending import TikTokVideo
 from tiktok.models.params.base import TikTokParams
 from tiktok.models.types import AwemeId
@@ -69,7 +65,7 @@ class TikTokBot:
     """
 
     def __init__(
-        self, ms_token: SecretStr, session_id: str, csrf_token: str, agent: Agent, config: BotConfig
+        self, ms_token: SecretStr, session_id: str, csrf_token: str, config: BotConfig
     ):
         """
         Initialize a new TikTokBot instance.
@@ -88,15 +84,11 @@ class TikTokBot:
             ms_token=self.ms_token, session_id=session_id, csrf_token=csrf_token
         )
 
-        # Store the decision-making agent.
-        # self.agent = agent
-
         # Save bot configuration such as number of cycles and batch sizes.
         self.config = config
 
         # Initialize counters for overall video processing statistics.
         self.total_videos = 0
-        # self.total_comments = 0
         self.total_follows = 0
         self.total_diggs = 0
         self.total_loads = 0
@@ -133,7 +125,7 @@ class TikTokBot:
         self.current_cycle: CycleStats | None = None
 
         # Setup logging directory and file.
-        self.log_dir = Path("logs_c3")
+        self.log_dir = Path("logs_c4")
         self.log_dir.mkdir(exist_ok=True)
         self.log_file = (
             self.log_dir / f"bot_activity_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -253,6 +245,7 @@ class TikTokBot:
                 follows_made=0,
                 loads_made=0,
                 videos_collected=[],
+                videos_watched=[],
                 actions=[],
                 api_responses=[],  # Initialize an empty list for API response logging.
             )
@@ -269,7 +262,7 @@ class TikTokBot:
 
             # Record the IDs of fetched videos into the cycle log.
             self.current_cycle.videos_collected = [video.id for video in trending_videos]
-            
+            self.current_cycle.videos_watched = [video.video.play_addr for video in trending_videos]
             # Process videos in batches using the configured batch size.
             for idx, videos in enumerate(
                 chunkize(trending_videos, self.config.trending_videos_process_batch), start=1
@@ -282,13 +275,10 @@ class TikTokBot:
                     len(videos),
                 )
 
-                # Generate a prompt for the current batch of videos
-                # decision_video = await self.agent.decide_action(
-                #     get_video_prompts(videos, list(VideoActions.__members__.keys())), VideoDecision
-                # )
-                # Decide on action
-
                 video_id = self.current_cycle.videos_collected[0]
+                # playback_url = self.current_cycle.videos_watched[0]
+                # await self.simulate_watch(video_id, playback_url)
+                # print("watched!", playback_url)
                 actions = []
                 rand = random.random()
                 print("rand", rand)
@@ -308,50 +298,6 @@ class TikTokBot:
                 # load first ten comments for each
                 success = await self.list_comments(video_id)
                 self.current_cycle.loads_made += int(success)
-
-                # if decision_video is None:
-                #     _LOGGER.warning("[Decision] No decision made for batch %d", idx)
-                #     continue
-                
-                # Process the decision for each video in the batch.
-                # for video_id, decision in decision_video.actions.items():
-                #     _LOGGER.info(
-                #         "[Decision] VIDEO %s: %s, %s",
-                #         video_id,
-                #         decision.action,
-                #         decision.reason,
-                #     )
-                #     video_id = self.current_cycle.videos_collected[0]
-                #     print("new video id", video_id)
-                #     match decision.action:
-                #         case VideoActions.NOOP:
-                #             pass
-                #         case VideoActions.DIGG:
-                #             # If the decision is DIGG, attempt to like the video.
-                #             success = await self.digg_video(video_id)
-                #             self.current_cycle.diggs_made += int(success)
-
-                #         # case VideoActions.COMMENT:
-                #         #     # Generate a comment for the video using the AI agent.
-                #         #     comment = await self.generate_comment(video_id)
-
-                #         #     if comment:
-                #         #         # Attempt to post the generated comment.
-                #         #         success = await self.post_comment(video_id, comment) is not None
-                #         #         self.current_cycle.comments_made += int(success)
-                #         case VideoActions.FOLLOW:
-                #             # Try following the video's author if possible.
-                #             video = next((v for v in trending_videos if v.id == video_id), None)
-
-                #             if video is not None and video.author.id is not None:
-                #                 success = await self.follow_user(video.author.id)
-                #                 self.current_cycle.follows_made += int(success)
-                #         case VideoActions.LOAD:
-                #             # If the decision is load, attempt to like comments
-                #             success = await self.list_comments(video_id)
-                #             self.current_cycle.loads_made += int(success)
-                #         case _:
-                #             _LOGGER.warning("[Decision] Unknown action: %s", decision.action)
 
                 # Update number of videos processed in the current cycle.
                 self.current_cycle.videos_processed += len(videos)
@@ -387,103 +333,10 @@ class TikTokBot:
                 self.current_cycle.diggs_made,
                 self.current_cycle.loads_made,
             )
-
-            # At the end of a cycle, decide what the next step should be:
-            # continue with another cycle, search by keyword, or quit.
-
-            # decision_cycle = await self.agent.decide_action(
-            #     get_cycle_prompt(cycle, list(EndOfCycleActions.__members__.keys())),
-            #     EndOfCycleDecision,
-            # )
-
-            # Execute next-cycle decision based on the agent's response.
-            # match decision_cycle:
-            #     case EndOfCycleActions.CONTINUE:
-            #         _LOGGER.info("[Cycle] Continuing to next cycle")
-            #     case EndOfCycleActions.QUIT:
-            #         _LOGGER.info("[Cycle] Quitting bot operation")
-            #         break
-            #     case EndOfCycleActions.SEARCH:
-            #         _LOGGER.info("[Cycle] Searching for specific content")
-            #         continue
-
             # Check if the maximum number of cycles has been reached.
             if self.max_cycles is not None and cycle >= self.max_cycles:
                 _LOGGER.info("[Cycle] Maximum cycles reached")
                 break
-
-    # async def generate_comment(self, video_id: str) -> str | None:
-    #     """
-    #     Generate a relevant comment for a given video using the AI agent.
-
-    #     :param video_id: The identifier of the video for which to generate a comment.
-
-    #     :return: The generated comment text, or None if generation fails.
-    #     """
-    #     _LOGGER.info("[Comment] Generating comment for video %s", video_id)
-
-    #     class _Comment(BaseModel):
-    #         # Nested model to parse the comment generated by the AI.
-    #         comment: str
-
-    #     try:
-    #         # Create a simple prompt for comment generation.
-    #         prompt = f"Generate a relevant, engaging comment for video {video_id}"
-    #         comment_text = await self.agent.decide_action(prompt, _Comment)
-    #         if comment_text is None:
-    #             return None
-
-    #         _LOGGER.info(
-    #             "[Comment] Generated comment for video %s: %s",
-    #             video_id,
-    #             comment_text.comment[:50] + "..."
-    #             if len(comment_text.comment) > 50
-    #             else comment_text.comment,
-    #         )
-
-    #         return comment_text.comment
-    #     except Exception as e:
-    #         _LOGGER.error(
-    #             "[Error - Comment] Failed to generate comment for video %s: %s", video_id, repr(e)
-    #         )
-    #         return None
-
-    # async def post_comment(self, video_id: str, comment_text: str) -> Comment | None:
-    #     """
-    #     Post a generated comment on a video using the TikTok API.
-
-    #     :param video_id: The ID of the video to comment on.
-    #     :param comment_text: The comment text to post.
-
-    #     :return: The Comment object returned by the API upon success, or None if failed.
-    #     """
-    #     params = TikTokParams.default_web()
-    #     try:
-    #         # Call the TikTok API to publish the comment.
-    #         response = await self.client.publish_comment(
-    #             video_id=AwemeId(video_id), comment=comment_text, params=params
-    #         )
-    #         # Log successful API response.
-    #         await self.log_api_response(
-    #             endpoint="publish_comment",
-    #             success=True,
-    #             response_id=f"comment_{video_id}",
-    #             response_data=response.model_dump(),
-    #         )
-    #         _LOGGER.info("[Action] Posted comment on video %s: %s", video_id, comment_text)
-    #         return response.comment
-    #     except Exception as e:
-    #         # Log failure details for debugging.
-    #         await self.log_api_response(
-    #             endpoint="publish_comment",
-    #             success=False,
-    #             response_id=f"comment_{video_id}",
-    #             error=repr(e),
-    #         )
-    #         _LOGGER.error(
-    #             "[Error - Comment] Error posting comment on video %s: %s", video_id, repr(e)
-    #         )
-    #         return None
 
     async def digg_video(self, video_id: str) -> bool:
         """
@@ -526,7 +379,6 @@ class TikTokBot:
         params = TikTokParams.default_web()
         try:
             # Execute the like action on the provided video.
-            print("listing", AwemeId(video_id), video_id)
             response = await self.client.list_comments(video_id=AwemeId(video_id), params=params)
             # Log a successful API response.
             await self.log_api_response(
@@ -606,6 +458,38 @@ class TikTokBot:
             _LOGGER.error("[Error - Follow] Error following user %s: %s", user_id, repr(e))
             return False
 
+    async def simulate_watch(self, video_id: str, play_adr: str) -> bool:
+        """
+        Simulate a watch of a tiktok video
+
+        :param user_id: The ID of the user to follow.
+
+        :return: True if the follow was successful (follow_status == 1), False otherwise.
+        """
+        params = TikTokParams.default_web()
+        try:
+            # Execute the like action on the provided video.
+            response = await self.client.simulate_watch(video_id=video_id, play_adr=play_adr, params=params)
+            # Log a successful API response.
+            await self.log_api_response(
+                endpoint="simulate_watch",
+                success=True,
+                response_id=f"simulate_watch_{video_id}",
+                response_data=response.model_dump(),
+            )
+            _LOGGER.info("[Action] Watched video %s", video_id)
+            return True
+        except Exception as e:
+            # Log failure if unable to follow the user.
+            await self.log_api_response(
+                endpoint="simulate_watch",
+                success=False,
+                response_id=f"simulate_watch_{video_id}",
+                error=repr(e),
+            )
+            _LOGGER.error("[Error - Follow] Error simulating watch for %s: %s", video_id, repr(e))
+            return False
+        
     async def sleep(self) -> None:
         """
         Sleep the bot for a random duration between 10 and 20 seconds to mimic human-like behavior.
