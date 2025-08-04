@@ -1,3 +1,8 @@
+import csv
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import asyncio
 
 from pydantic import SecretStr
@@ -6,14 +11,21 @@ from tiktok.client.tiktok_client import TikTokClient
 from tiktok.models.params.base import TikTokParams
 from tiktok.models.types import AwemeId
 
-BASE_URL = "https://www.tiktok.com"
-MS_TOKEN = "<ms_token>"
-SESSION_ID = "<session_id>"
-CSRF_TOKEN = "<csrf_token>"
+from dotenv import load_dotenv
+load_dotenv()
+MS_TOKEN = os.getenv("MS_TOKEN")
+SESSION_ID = os.getenv("SESSION_ID")
+# CSRF_TOKEN = os.getenv("CSRF_TOKEN")
+print("sessionid", SESSION_ID)
 
+BASE_URL = "https://www.tiktok.com"
+# MS_TOKEN = "KE1YZzwn04uhMYR_HhMG3YZZy0Ux5yQ0c8XckLuUNth_L8UD62-ZtyuYLbc8dCCG4O19lhkKQwA4m7Vyunygk1Zfh9FqRRAjbSyqDxZ3JBg1YkDQxtsu455WItGKMlATjPvu2wPUY3anfQM="
+# SESSION_ID = "02e9fab12e132cdf299924f28f13e5a9"
+CSRF_TOKEN = "3f1b7bd5d052ed1b194a9787663cafe6"
 
 async def api_call() -> None:
     """Test an API call locally."""
+    print(MS_TOKEN)
     client = TikTokClient(
         base_url=BASE_URL,
         ms_token=SecretStr(MS_TOKEN),
@@ -58,16 +70,29 @@ async def api_call() -> None:
     # print("Comments After Publish: ", comments_after_publish.model_dump_json(indent=2))
     # await asyncio.sleep(2)
 
-    # print("Searching Keyword...")
-    # search_response = await client.search_keyword(keyword="donald trump", params=params)
-    # print("Search Response: ", search_response.model_dump_json(indent=2))
-    # await asyncio.sleep(2)
+    print("Searching Keyword...")
+    search_response = await client.search_keyword(keyword="sex", params=params)
+    print("Search Response: ", search_response.model_dump_json(indent=2))
+    await asyncio.sleep(5)
+    if search_response.data:
+        # Convert each result to a dict
+        rows = [item.model_dump() for item in search_response.data]
 
-    video_id = AwemeId("7470238360603200814")
-    print("Getting Video Details...")
-    video_details = await client.get_video_details(video_id=video_id, params=params)
-    print("Video Details: ", video_details.model_dump_json(indent=2))
-    await asyncio.sleep(2)
+        # Use the keys from the first item as column headers
+        fieldnames = rows[0].keys()
+
+        with open("search_results_censor.csv", "w", encoding="utf-8", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
+    else:
+        print("No data found in search response.")
+
+    # video_id = AwemeId("7470238360603200814")
+    # print("Getting Video Details...")
+    # video_details = await client.get_video_details(video_id=video_id, params=params)
+    # print("Video Details: ", video_details.model_dump_json(indent=2))
+    # await asyncio.sleep(2)
 
 
 if __name__ == "__main__":
