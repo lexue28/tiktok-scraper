@@ -1,0 +1,2357 @@
+{
+  "session_id": "b3a8edfc-80aa-4914-bd39-ec7fb4d2bd7c",
+  "start_time": "2025-07-27 13:30:06.221795",
+  "cycles": [
+    {
+      "cycle_id": 1,
+      "start_time": "2025-07-27 13:30:06.224296",
+      "end_time": "2025-07-27 13:30:26.236097",
+      "videos_processed": 1,
+      "diggs_made": 0,
+      "follows_made": 0,
+      "loads_made": 1,
+      "videos_collected": [
+        "7530357500676181270"
+      ],
+      "videos_watched": [
+        "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/okhCei9NEUiMAFeEEgQQVAWaifCBGUD5RIJfGm/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1834&bt=917&cs=0&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=0&rc=ZTU5NmY2OTZmZDVoODM2OEBpM201aXY5cnFtNTMzbzczNUAwLi8uLV5fXjAxLmMwYTUtYSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=a87df4b19eac42aaa0648e41802818b9&tk=tt_chain_token"
+      ],
+      "actions": [],
+      "api_responses": [
+        {
+          "id": "trending_batch_1",
+          "endpoint": "get_trending",
+          "timestamp": "2025-07-27 13:30:06.887095",
+          "success": true,
+          "response_data": {
+            "item_list": [
+              {
+                "aigc_description": "",
+                "ba_info": null,
+                "category_type": 0,
+                "ad_authorization": null,
+                "ad_label_version": null,
+                "anchors": [],
+                "author": {
+                  "avatar_larger": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/14c13f8bc27f9744c4df72fea9629d9d~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=0a6aa81b&x-expires=1753808400&x-signature=uUx5C2rdQaD5aqWWDQ2cJn3ByzE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "avatar_medium": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/14c13f8bc27f9744c4df72fea9629d9d~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=0d344185&x-expires=1753808400&x-signature=ZBwIdfNbbJIuzbPDILsIXsN9pVY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "avatar_thumb": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/14c13f8bc27f9744c4df72fea9629d9d~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=4d19b8ac&x-expires=1753808400&x-signature=vifCOGGAVenXL7L4WsJGPZaeriw%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "comment_setting": 0,
+                  "download_setting": 0,
+                  "duet_setting": 0,
+                  "ftc": false,
+                  "id": "7018577855954551814",
+                  "is_ad_virtual": false,
+                  "is_embed_banned": false,
+                  "nickname": "\u25a0\u15b4E\u15eaE\u1587I\u1455O\u25a0",
+                  "open_favorite": false,
+                  "private_account": false,
+                  "relation": 0,
+                  "sec_uid": "MS4wLjABAAAAfQ93PEpHVILjJj5_xlz3xxMrvcV19Wl3vwf-kbEcgQqKFhMgnqb9XOK3KpY3-bsE",
+                  "secret": false,
+                  "signature": "Trasch napoletano, gossip, moda, musica, cronaca nera, e altro.. venite con me\u2708\ufe0f",
+                  "stitch_setting": 0,
+                  "unique_id": "fede_sumo",
+                  "verified": false
+                },
+                "backend_source_event_tracking": "fyp_ug_content",
+                "challenges": [
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "34267",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "mamma"
+                  },
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "34813",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "thiago"
+                  },
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "7095712707189407750",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "fedesumo\u2763\ufe0f"
+                  },
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "9398758",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "bergamo"
+                  }
+                ],
+                "collected": false,
+                "contents": [
+                  {
+                    "desc": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                    "text_extra": [
+                      {
+                        "aweme_id": "",
+                        "end": 6,
+                        "hashtag_name": "mamma",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 0,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      },
+                      {
+                        "aweme_id": "",
+                        "end": 14,
+                        "hashtag_name": "thiago",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 7,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      },
+                      {
+                        "aweme_id": "",
+                        "end": 26,
+                        "hashtag_name": "fedesumo\u2763\ufe0f",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 15,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      },
+                      {
+                        "aweme_id": "",
+                        "end": 35,
+                        "hashtag_name": "bergamo",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 27,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      }
+                    ]
+                  }
+                ],
+                "create_time": 1753297986,
+                "desc": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                "digged": false,
+                "diversification_id": null,
+                "duet_display": 0,
+                "duet_enabled": true,
+                "for_friend": false,
+                "id": "7530357500676181270",
+                "item_comment_status": 0,
+                "item_control": {
+                  "can_repost": true,
+                  "can_comment": null,
+                  "can_creator_redirect": null,
+                  "can_music_redirect": null,
+                  "can_share": null
+                },
+                "music": {
+                  "album": "Morricone 60",
+                  "author_name": "Ennio Morricone & Czech National Symphony Orchestra, Prague",
+                  "cover_large": "https://p77-sg.tiktokcdn.com/aweme/720x720/tos-alisg-v-2774/oABeCBvPGFBAutIAImEDzdfmIAlIgLgIBQ5sPZ.jpeg",
+                  "cover_medium": "https://p77-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/oABeCBvPGFBAutIAImEDzdfmIAlIgLgIBQ5sPZ.jpeg",
+                  "cover_thumb": "https://p77-sg.tiktokcdn.com/aweme/100x100/tos-alisg-v-2774/oABeCBvPGFBAutIAImEDzdfmIAlIgLgIBQ5sPZ.jpeg",
+                  "duration": 60,
+                  "id": "6937748712277952513",
+                  "is_copyrighted": true,
+                  "original": false,
+                  "play_url": "https://sf16-ies-music-sg.tiktokcdn.com/obj/tos-alisg-ve-2774/oQgXe7AMYFCmeGQXQVuQkKgV1G8y8eFA7mwfDt",
+                  "title": "Morricone: Deborah's Theme - From \"Once Upon A Time In America\""
+                },
+                "offical_item": false,
+                "original_item": false,
+                "poi": null,
+                "private_item": false,
+                "secret": false,
+                "share_enabled": true,
+                "stats": {
+                  "collect_count": 7398,
+                  "comment_count": 7032,
+                  "digg_count": 155800,
+                  "play_count": 5900000,
+                  "share_count": 2208
+                },
+                "stats_v2": {
+                  "collect_count": "7398",
+                  "comment_count": "7032",
+                  "digg_count": "155800",
+                  "play_count": "5900000",
+                  "repost_count": "0",
+                  "share_count": "2208"
+                },
+                "stitch_display": 0,
+                "stitch_enabled": true,
+                "text_extra": [
+                  {
+                    "aweme_id": "",
+                    "end": 6,
+                    "hashtag_name": "mamma",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 0,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  },
+                  {
+                    "aweme_id": "",
+                    "end": 14,
+                    "hashtag_name": "thiago",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 7,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  },
+                  {
+                    "aweme_id": "",
+                    "end": 26,
+                    "hashtag_name": "fedesumo\u2763\ufe0f",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 15,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  },
+                  {
+                    "aweme_id": "",
+                    "end": 35,
+                    "hashtag_name": "bergamo",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 27,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  }
+                ],
+                "text_language": "un",
+                "text_translatable": false,
+                "video": {
+                  "vq_score": "47.65",
+                  "bitrate": 939234,
+                  "bitrate_info": [
+                    {
+                      "bitrate": 939234,
+                      "codec_type": "h264",
+                      "gear_name": "normal_540_0",
+                      "play_addr": {
+                        "data_size": 1221005,
+                        "file_cs": "c:0-10181-dea9",
+                        "file_hash": "8bd1a1672e6c24ca0f76b374d11ccc22",
+                        "height": 1024,
+                        "uri": "v24044gl0000d20j7nvog65sjfm24j50",
+                        "url_key": "v24044gl0000d20j7nvog65sjfm24j50_h264_540p_939234",
+                        "url_list": [
+                          "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/okhCei9NEUiMAFeEEgQQVAWaifCBGUD5RIJfGm/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1834&bt=917&cs=0&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=0&rc=ZTU5NmY2OTZmZDVoODM2OEBpM201aXY5cnFtNTMzbzczNUAwLi8uLV5fXjAxLmMwYTUtYSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=a87df4b19eac42aaa0648e41802818b9&tk=tt_chain_token",
+                          "https://v19-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/okhCei9NEUiMAFeEEgQQVAWaifCBGUD5RIJfGm/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1834&bt=917&cs=0&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=0&rc=ZTU5NmY2OTZmZDVoODM2OEBpM201aXY5cnFtNTMzbzczNUAwLi8uLV5fXjAxLmMwYTUtYSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=a87df4b19eac42aaa0648e41802818b9&tk=tt_chain_token",
+                          "https://www.tiktok.com/aweme/v1/play/?faid=1988&file_id=0583d035fe124a3ca3b6a30c1326123b&is_play_url=1&item_id=7530357500676181270&line=0&ply_type=2&signaturev3=dmlkZW9faWQ7ZmlsZV9pZDtpdGVtX2lkLmVlMjg4YzYwMTM0YmU3ZjU4MTVlZDU1OGM0NTgzN2Qy&tk=tt_chain_token&video_id=v24044gl0000d20j7nvog65sjfm24j50"
+                        ],
+                        "width": 576
+                      },
+                      "quality_type": 20,
+                      "mvmaf": "\"{\\\"v2.0\\\": {\\\"srv1\\\": {\\\"v1080\\\": 93.228, \\\"v960\\\": 94.972, \\\"v864\\\": 96.405, \\\"v720\\\": 97.153}, \\\"ori\\\": {\\\"v1080\\\": 85.393, \\\"v960\\\": 88.018, \\\"v864\\\": 88.905, \\\"v720\\\": 91.373}}}\""
+                    },
+                    {
+                      "bitrate": 458586,
+                      "codec_type": "h265_hvc1",
+                      "gear_name": "adapt_540_1",
+                      "play_addr": {
+                        "data_size": 596163,
+                        "file_cs": "c:0-10341-0bc5",
+                        "file_hash": "b4b50e87f322fde6279b5fd952001745",
+                        "height": 1024,
+                        "uri": "v24044gl0000d20j7nvog65sjfm24j50",
+                        "url_key": "v24044gl0000d20j7nvog65sjfm24j50_bytevc1_540p_458586",
+                        "url_list": [
+                          "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/ogEDiBJ57wfMRGKN85eWXiMAEOQNBTGIeAfFGN/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=894&bt=447&cs=2&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=11&rc=ODVmOTtmZmU5aTdmPDo6OkBpM201aXY5cnFtNTMzbzczNUAwYDFhNi9hXi0xNS42M2E0YSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=d2bcd2142da7c959fdbeaa88c9045c32&tk=tt_chain_token",
+                          "https://v19-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/ogEDiBJ57wfMRGKN85eWXiMAEOQNBTGIeAfFGN/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=894&bt=447&cs=2&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=11&rc=ODVmOTtmZmU5aTdmPDo6OkBpM201aXY5cnFtNTMzbzczNUAwYDFhNi9hXi0xNS42M2E0YSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=d2bcd2142da7c959fdbeaa88c9045c32&tk=tt_chain_token",
+                          "https://www.tiktok.com/aweme/v1/play/?faid=1988&file_id=77d767991c844f06abdc2c98d64cc235&is_play_url=1&item_id=7530357500676181270&line=0&ply_type=2&signaturev3=dmlkZW9faWQ7ZmlsZV9pZDtpdGVtX2lkLmY4NGU3ZGJmZTllNGE3MTk2MmJmOTc5YTFlOWY1ZDZj&tk=tt_chain_token&video_id=v24044gl0000d20j7nvog65sjfm24j50"
+                        ],
+                        "width": 576
+                      },
+                      "quality_type": 28,
+                      "mvmaf": "\"{\\\"v2.0\\\": {\\\"srv1\\\": {\\\"v1080\\\": 93.388, \\\"v960\\\": 95.765, \\\"v864\\\": 96.573, \\\"v720\\\": 98.42}, \\\"ori\\\": {\\\"v1080\\\": 83.32, \\\"v960\\\": 86.834, \\\"v864\\\": 87.607, \\\"v720\\\": 91.356}}}\""
+                    }
+                  ],
+                  "cla_info": {
+                    "caption_infos": [],
+                    "captions_type": null,
+                    "enable_auto_caption": false,
+                    "original_language_info": null,
+                    "has_original_audio": false,
+                    "no_caption_reason": 2
+                  },
+                  "codec_type": "h264",
+                  "cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocy0IKQGCRHMNWDiWVAFTBEdEfNwifEGeBe5BA~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=XrGC8WZb%2Fm9a6QdfukBQbw%2FmWbQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "definition": "540p",
+                  "download_addr": "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/o8IBEQWNGTwBACDiNFSsfTdeKe5RfEBAQiMjGz/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1902&bt=951&cs=0&ds=3&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=0&rc=cnF8b2hsc2d3SkBwaHIxaDFybndmN2k7Zjk7NTY7OTdlPDY0ZkBpM201aXY5cnFtNTMzbzczNUBjRl5Nc3FePmJKYSNvYF90aHFmOiNgMWIxMDEuXi8xYjU0LWM0YSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=489bbb715ae5d5be007fc0b03ee797b0&tk=tt_chain_token",
+                  "duration": 10,
+                  "dynamic_cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ooDm9fUfGiEckQWeGhDCEeFMlImBAA5QNsaXQR~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=pi7KV3D6hdoU50mnZiA%2FZ1XpGeI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "encode_user_tag": "",
+                  "encoded_type": "normal",
+                  "format": "mp4",
+                  "height": 1024,
+                  "id": "7530357500676181270",
+                  "origin_cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ok6eIQKNfDAENe8VyMF5WGiAyRiATGuBIwfSBE~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=sAzZrB%2BetA7oOqi91ufdXE%2FDzPM%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "play_addr": "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/okhCei9NEUiMAFeEEgQQVAWaifCBGUD5RIJfGm/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1834&bt=917&cs=0&ds=6&ft=-Csk_mctPD12NYLz_h-Ux2e5SY3W3wv25AcAp&mime_type=video_mp4&qs=0&rc=ZTU5NmY2OTZmZDVoODM2OEBpM201aXY5cnFtNTMzbzczNUAwLi8uLV5fXjAxLmMwYTUtYSMyMWpnMmRzNC1hLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810216&l=20250727173006404450E58AE24C3A091A&ply_type=2&policy=2&signature=a87df4b19eac42aaa0648e41802818b9&tk=tt_chain_token",
+                  "ratio": "540p",
+                  "subtitle_infos": [],
+                  "video_quality": "normal",
+                  "volume_info": {
+                    "loudness": -13.7,
+                    "peak": 0.91201
+                  },
+                  "width": 576,
+                  "zoom_cover": {
+                    "240": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocy0IKQGCRHMNWDiWVAFTBEdEfNwifEGeBe5BA~tplv-photomode-zoomcover:240:240.jpeg?dr=10375&x-expires=1753808400&x-signature=EavRCSJ2AOtBA7PW896RhZVKnpc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "480": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocy0IKQGCRHMNWDiWVAFTBEdEfNwifEGeBe5BA~tplv-photomode-zoomcover:480:480.jpeg?dr=10375&x-expires=1753808400&x-signature=MJHQTj9AXPYjC%2B3zw2eHkb0428k%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "720": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocy0IKQGCRHMNWDiWVAFTBEdEfNwifEGeBe5BA~tplv-photomode-zoomcover:720:720.jpeg?dr=10375&x-expires=1753808400&x-signature=IXflLNyfh8TvIifAbpjQNcnPwfI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "960": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocy0IKQGCRHMNWDiWVAFTBEdEfNwifEGeBe5BA~tplv-photomode-zoomcover:960:960.jpeg?dr=10375&x-expires=1753808400&x-signature=6xaFsUgEgl3DxPLNwCMOAGfwfGo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1"
+                  }
+                }
+              }
+            ],
+            "extra": {
+              "fatal_item_ids": [],
+              "logid": "20250727173006404450E58AE24C3A091A",
+              "now": 1753637406000
+            },
+            "has_more": true,
+            "statusCode": 0,
+            "status_code": 0,
+            "status_msg": "",
+            "log_pb": {
+              "impr_id": "20250727173006404450E58AE24C3A091A"
+            }
+          },
+          "error": null
+        },
+        {
+          "id": "list_comments_7530357500676181270",
+          "endpoint": "list_comments",
+          "timestamp": "2025-07-27 13:30:07.223403",
+          "success": true,
+          "response_data": {
+            "alias_comment_deleted": false,
+            "comments": [
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530595973834474242",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753353524,
+                "digg_count": 356,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 83,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Daniele\u2019s comment: \u00c8 inutile piangere adesso che \u00e8 morto dovevi esserci quando aveva bisogno di te nonostante i soprusi fatti da Thiago causati da una malattia pregressa ora potr\u00e0 trovare la pace che nessuno \u00e8 stato capace di dargli vola in paradiso sei un angelo \ud83d\udc7c\ud83c\udffb THIAGO ELAR r.i.p. \ud83d\udc94\ud83d\udc94\ud83d\udc94\ud83d\ude4f\ud83c\udffb\ud83d\ude4f\ud83c\udffb\ud83d\udd6f\ufe0f\ud83e\udd72\ud83e\udd72\ud83d\ude2d",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=7229303787733943302&preview_pb=0&share_comment_id=7530595973834474242&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 6.6e-05,
+                  "show_more_score": 0.048059
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "\u00c8 inutile piangere adesso che \u00e8 morto dovevi esserci quando aveva bisogno di te nonostante i soprusi fatti da Thiago causati da una malattia pregressa ora potr\u00e0 trovare la pace che nessuno \u00e8 stato capace di dargli vola in paradiso sei un angelo \ud83d\udc7c\ud83c\udffb THIAGO ELAR r.i.p. \ud83d\udc94\ud83d\udc94\ud83d\udc94\ud83d\ude4f\ud83c\udffb\ud83d\ude4f\ud83c\udffb\ud83d\udd6f\ufe0f\ud83e\udd72\ud83e\udd72\ud83d\ude2d",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Daniele",
+                  "sec_uid": "MS4wLjABAAAA6J99z0j4QRiQmevHHK_h82FOZKXgmliNsHLJZq-SJ9M8RF5Ab_r_zrWPJ0ZS_f5C",
+                  "uid": "7229303787733943302",
+                  "unique_id": "danieleguzzon1",
+                  "avatar_thumb": {
+                    "uri": "tos-useast2a-avt-0068-giso/7229304134729891867",
+                    "url_list": [
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-giso/7229304134729891867~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=370cadc0&x-expires=1753722000&x-signature=J9VT49Z%2F0lPxkk16mCn4VC7MGnc%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-giso/7229304134729891867~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=cb1c3323&x-expires=1753722000&x-signature=0flE3JHH1%2B%2FnoIXJfulZ3OrlR1Q%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-giso/7229304134729891867~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=d0803fa0&x-expires=1753722000&x-signature=0NXgvN9TLkzUdLe2bPHFhxP6IZU%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530977292911837974",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753442303,
+                "digg_count": 15,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 4,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Giusy Chil\u00e0\ud83c\udff3\ufe0f\u200d\ud83c\udf08\u2019s comment: Riposa in pace caro Thiago\u2665\ufe0f",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=300916829768753152&preview_pb=0&share_comment_id=7530977292911837974&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 8e-06,
+                  "show_more_score": 0.011211
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Riposa in pace caro Thiago\u2665\ufe0f",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Giusy Chil\u00e0\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+                  "sec_uid": "MS4wLjABAAAA_Vb4gXVVwz0AucmCFw2DXLLrcqqyfzp-EqgXd5f3FGzF5G6AURd18Hqa4V4tkQVk",
+                  "uid": "300916829768753152",
+                  "unique_id": "giusychila",
+                  "avatar_thumb": {
+                    "uri": "tos-maliva-avt-0068/0648b83db0a788ef6325b2d40def3e4f",
+                    "url_list": [
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0648b83db0a788ef6325b2d40def3e4f~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=87d6151e&x-expires=1753722000&x-signature=4drcuB0lJ4iv2oiLxzFVtBFOFo0%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0648b83db0a788ef6325b2d40def3e4f~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=9c3f111d&x-expires=1753722000&x-signature=dpehYnwslDrH6gn63VqnM2DGOgQ%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/0648b83db0a788ef6325b2d40def3e4f~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=f43d0a2d&x-expires=1753722000&x-signature=fqxb0gKLUW0sFYjxGz7uumSNzPI%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530410494550541058",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753310336,
+                "digg_count": 98,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": [
+                  {
+                    "author_pin": false,
+                    "aweme_id": "7530357500676181270",
+                    "cid": "7530519357362389782",
+                    "collect_stat": 0,
+                    "comment_language": "it",
+                    "comment_post_item_ids": null,
+                    "create_time": 1753335702,
+                    "digg_count": 200,
+                    "forbid_reply_with_video": true,
+                    "image_list": null,
+                    "is_author_digged": false,
+                    "is_comment_translatable": true,
+                    "is_high_purchase_intent": true,
+                    "label_list": null,
+                    "no_show": false,
+                    "reply_comment": null,
+                    "reply_id": "7530410494550541058",
+                    "reply_to_reply_id": "0",
+                    "share_info": {
+                      "acl": {
+                        "code": 0,
+                        "extra": "{}"
+                      },
+                      "desc": "Kaos -Kry\u2763\ufe0f\ud83c\udf40\ud83c\udf40\ud83c\udf40\ud83c\udf40\u2019s comment: Perch\u00e9 vorresti andare a commentare sotto di lei ?",
+                      "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                      "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6747304043838112774&preview_pb=0&share_comment_id=7530519357362389782&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                    },
+                    "status": 1,
+                    "stick_position": 0,
+                    "text": "Perch\u00e9 vorresti andare a commentare sotto di lei ?",
+                    "text_extra": [],
+                    "trans_btn_style": 1,
+                    "user": {
+                      "account_labels": null,
+                      "ad_cover_url": null,
+                      "advance_feature_item_order": null,
+                      "advanced_feature_info": null,
+                      "avatar_thumb": {
+                        "uri": "tos-no1a-avt-0068c001-no/36dced4e869338d29750577eb784e14d",
+                        "url_list": [
+                          "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/36dced4e869338d29750577eb784e14d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=11c13edd&x-expires=1753722000&x-signature=tsruHTKD1gLS2z8jXUNvHtiVzP8%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                          "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/36dced4e869338d29750577eb784e14d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=4b4695d0&x-expires=1753722000&x-signature=%2BpUrSrF162pgHn7gCovqKNTuz58%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                          "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/36dced4e869338d29750577eb784e14d~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=41843785&x-expires=1753722000&x-signature=oMoJXa6fS2Gx363tbgBoPs5ux4g%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                        ],
+                        "url_prefix": null
+                      },
+                      "bold_fields": null,
+                      "can_message_follow_status_list": null,
+                      "can_set_geofencing": null,
+                      "cha_list": null,
+                      "cover_url": null,
+                      "custom_verify": "",
+                      "enterprise_verify_reason": "",
+                      "events": null,
+                      "followers_detail": null,
+                      "geofencing": null,
+                      "homepage_bottom_toast": null,
+                      "item_list": null,
+                      "mutual_relation_avatars": null,
+                      "need_points": null,
+                      "nickname": "Kaos -Kry\u2763\ufe0f\ud83c\udf40\ud83c\udf40\ud83c\udf40\ud83c\udf40",
+                      "platform_sync_info": null,
+                      "relative_users": null,
+                      "search_highlight": null,
+                      "sec_uid": "MS4wLjABAAAAHkBno85RWJNaN6c8VAYvGaIsW2r9AJHsePCR5NHhr9Lfz7Usgv_AHabEcQK0Ptcu",
+                      "shield_edit_field_info": null,
+                      "type_label": null,
+                      "uid": "6747304043838112774",
+                      "unique_id": "kristinagranato50",
+                      "user_profile_guide": null,
+                      "user_tags": null,
+                      "white_cover_url": null
+                    },
+                    "user_buried": false,
+                    "user_digged": 0
+                  }
+                ],
+                "reply_comment_total": 77,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "\ud83d\udcb8\ud83c\udf39\u2019s comment: Come si chiama la mamma di thiago?",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6709763244092130309&preview_pb=0&share_comment_id=7530410494550541058&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 2.8e-05,
+                  "show_more_score": 0.021918
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Come si chiama la mamma di thiago?",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "\ud83d\udcb8\ud83c\udf39",
+                  "sec_uid": "MS4wLjABAAAA0d0SMhMI0wluTO0piYoetMf0QzDyafpLpdK1nmTc_sK3GWvuyGKo33oZNDOUES3-",
+                  "uid": "6709763244092130309",
+                  "unique_id": "_robertasanfilippo_",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/eb3fb7c71195127ac0bbcc5404b18adb",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/eb3fb7c71195127ac0bbcc5404b18adb~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=cffad424&x-expires=1753722000&x-signature=kdrTHMPummInttuQgZC2jgXMoCQ%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/eb3fb7c71195127ac0bbcc5404b18adb~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=8e86e098&x-expires=1753722000&x-signature=XIoHjp749y5k9IXUtz2fGYaLYLU%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/eb3fb7c71195127ac0bbcc5404b18adb~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=01764339&x-expires=1753722000&x-signature=J5D0K9B3MEYDQf%2BkigwMxVW6eEw%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530413249591460630",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753310982,
+                "digg_count": 4212,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 135,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Not_care\u2019s comment: Non \u00e8 assolutamente facile stare vicino a un paziente con disturbi psichiatrici, sono infermiera e conosco benissimo la disperazione di un genitore che avrebbe dato la propria vita per salvare il proprio figlio. Purtroppo la realt\u00e0 ci riporta ad una consapevolezza dura e drammatica,e cio\u00e8 che le malattie mentali non hanno sempre un lieto fine. La madre di Thiago ha perso la sua battaglia e credetemi che nulla \u00e8 finzione .",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6702672774299141126&preview_pb=0&share_comment_id=7530413249591460630&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 3.1e-05,
+                  "show_more_score": 0.042978
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Non \u00e8 assolutamente facile stare vicino a un paziente con disturbi psichiatrici, sono infermiera e conosco benissimo la disperazione di un genitore che avrebbe dato la propria vita per salvare il proprio figlio. Purtroppo la realt\u00e0 ci riporta ad una consapevolezza dura e drammatica,e cio\u00e8 che le malattie mentali non hanno sempre un lieto fine. La madre di Thiago ha perso la sua battaglia e credetemi che nulla \u00e8 finzione .",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Not_care",
+                  "sec_uid": "MS4wLjABAAAAaSWSyuJdpwIsxRC4E7RDDTrDwwSDweKd4lzp-27d8X8Isf-HD4Cx4uOo-iZ3TYaf",
+                  "uid": "6702672774299141126",
+                  "unique_id": "ileana_derugeriis",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/fc797bcafa1e158daa5dd5d907a3c330",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/fc797bcafa1e158daa5dd5d907a3c330~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=8252e698&x-expires=1753722000&x-signature=AacbiovmAl4wIOQFAsK9kh1be0A%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/fc797bcafa1e158daa5dd5d907a3c330~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=8239f748&x-expires=1753722000&x-signature=RXzMIapbF2YtaG7HyjKu%2B6UXd6A%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/fc797bcafa1e158daa5dd5d907a3c330~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=84e352a8&x-expires=1753722000&x-signature=Zw3Dsx0K6pAkaNc809M8Ft4SZ%2Fg%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530369945990169366",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753300890,
+                "digg_count": 573,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 190,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Nico\u2665\ufe0f\u2019s comment: Merda merda merda d\u00ed mamma",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6973299150326612998&preview_pb=0&share_comment_id=7530369945990169366&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 0.000282,
+                  "show_more_score": 0.14143
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Merda merda merda d\u00ed mamma",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Nico\u2665\ufe0f",
+                  "sec_uid": "MS4wLjABAAAA9U2HZ_x_yzX8KRN3U8lyhNWBk8zHFYG_0a1sma66cmgt_JivSkI6yGCskUo8T2qh",
+                  "uid": "6973299150326612998",
+                  "unique_id": "nico74914",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/e71459339b2a50ce1e6bab028ca31656",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/e71459339b2a50ce1e6bab028ca31656~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=9a5404e4&x-expires=1753722000&x-signature=rNW1DyjrHe6qqmlLiiBFpoXdo7k%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/e71459339b2a50ce1e6bab028ca31656~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=011b93ef&x-expires=1753722000&x-signature=FfKCjutiEITwzp%2Bpk8UzE0cKW5Y%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/e71459339b2a50ce1e6bab028ca31656~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=ce552a9f&x-expires=1753722000&x-signature=tNq9PAptxL7tyKLaOOmJ0RsGCHY%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530711739112129302",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753380477,
+                "digg_count": 163,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 14,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Monica Sergi\u2019s comment: Rimango sconsolata da certi commenti!\nma avete capito che malatia aveva thiago ,non tutto ci\u00f2 che diceva era verit\u00e0, implorava aiuto,ma non lo accettava, passava da fasi di isteria alla finta calma ...chiedeva soldi privatamente a chi le porgeva la mano !..ma da 4 video noi sappiamo cosa realmente sia sucesso? finiamola di giudicare senza sapere ,non siamo la corte suprema ..rispetto per entrambe le parti ma in silenzio",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6855732229059281926&preview_pb=0&share_comment_id=7530711739112129302&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 1.6e-05,
+                  "show_more_score": 0.006396
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Rimango sconsolata da certi commenti!\nma avete capito che malatia aveva thiago ,non tutto ci\u00f2 che diceva era verit\u00e0, implorava aiuto,ma non lo accettava, passava da fasi di isteria alla finta calma ...chiedeva soldi privatamente a chi le porgeva la mano !..ma da 4 video noi sappiamo cosa realmente sia sucesso? finiamola di giudicare senza sapere ,non siamo la corte suprema ..rispetto per entrambe le parti ma in silenzio",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Monica Sergi",
+                  "sec_uid": "MS4wLjABAAAA5kvwsXqWu6paq-eseKRNrsziCsOHEGn_4_Eu3a0lKBiVYPY0RMAqxlGGCU8je4FN",
+                  "uid": "6855732229059281926",
+                  "unique_id": "monicamokasergi",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/013029d0e91b5a509dd8fc47a1b94808",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/013029d0e91b5a509dd8fc47a1b94808~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=5fccb191&x-expires=1753722000&x-signature=VZ52PjitduLD5dwwGMr4d1ihm94%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/013029d0e91b5a509dd8fc47a1b94808~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=b38b1b81&x-expires=1753722000&x-signature=ZbGcQ9XYR6CcY0qL1wUNY3KAHQk%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/013029d0e91b5a509dd8fc47a1b94808~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=61d60f04&x-expires=1753722000&x-signature=XHJ4Ml8tUgOTN4JCHv3681QHkZ4%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530370684380627734",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753301062,
+                "digg_count": 167,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 4,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Ledy Loriana\u2019s comment: cosa ne sappiamo noi di cosa pu\u00f2 avere sofferto questa donna....\nconosciamo la versione di tiago....\nnon giudichiamo...\ncondoglianze alla famiglia\nTiago rip\ud83d\ude4f",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=6536225672887538688&preview_pb=0&share_comment_id=7530370684380627734&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 2.4e-05,
+                  "show_more_score": 0.016692
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "cosa ne sappiamo noi di cosa pu\u00f2 avere sofferto questa donna....\nconosciamo la versione di tiago....\nnon giudichiamo...\ncondoglianze alla famiglia\nTiago rip\ud83d\ude4f",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Ledy Loriana",
+                  "sec_uid": "MS4wLjABAAAARRSE5xOn9qhoCF1UDmkeDDVLLYorMUthvob-Z4Wd4nadgocVfVFlY3MulwHCWve7",
+                  "uid": "6536225672887538688",
+                  "unique_id": "ledyloriana",
+                  "avatar_thumb": {
+                    "uri": "tos-alisg-avt-0068/9506bb2c1f8c711bf0b31f7066007d98",
+                    "url_list": [
+                      "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/9506bb2c1f8c711bf0b31f7066007d98~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=0a61368a&x-expires=1753722000&x-signature=pQYepZtZR7kfgvPcdWDp%2Bw0TMGw%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p77-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/9506bb2c1f8c711bf0b31f7066007d98~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=2d7f578e&x-expires=1753722000&x-signature=62CRPco2ZPok5Oi2tHCdcL4yz7M%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/9506bb2c1f8c711bf0b31f7066007d98~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=fc85a558&x-expires=1753722000&x-signature=w2bcgzUd7d80aPhzv5KNvczYx0Q%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530374671314060054",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753301990,
+                "digg_count": 21,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 0,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Naty_\ud83e\ude9e\u2019s comment: Riposa in pace Thiago! Condoglianze alla famiglia \ud83d\udc94",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=7028453790865228805&preview_pb=0&share_comment_id=7530374671314060054&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 3e-06,
+                  "show_more_score": 4e-06
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Riposa in pace Thiago! Condoglianze alla famiglia \ud83d\udc94",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Naty_\ud83e\ude9e",
+                  "sec_uid": "MS4wLjABAAAAUH7eC-nkglEYBjMnbANCf-FBTo8ieDm6SExJq5lBAHgGNSipxpm43FlOj2rjeCXs",
+                  "uid": "7028453790865228805",
+                  "unique_id": "simplymy7",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/f323762a76cd50b45aeb585b8631c77d",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f323762a76cd50b45aeb585b8631c77d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=63392b45&x-expires=1753722000&x-signature=PIYL%2B4L%2FeTTSka0%2FQcIER%2FciXqE%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f323762a76cd50b45aeb585b8631c77d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=1433bc61&x-expires=1753722000&x-signature=CNVfZP4meWA50iQ8H%2B1p9vf1VmY%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f323762a76cd50b45aeb585b8631c77d~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=46e630fb&x-expires=1753722000&x-signature=srg%2FnUfQM9rQ6S6wDZLyaocKcyg%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530766199421747990",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753393155,
+                "digg_count": 26,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 0,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "madame x\u2019s comment: La mamma di Thiago ha fatto bene a fare cio'che ha fatto.Giudicate Senza sapere.Quando c'\u00e8 un giudice di mezzo,la cosa \u00e8 serissima.La mamma non lo ha abbandonato.Sempre bravi ad espletare sentenze,Senza sapere.",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=7225006371711632389&preview_pb=0&share_comment_id=7530766199421747990&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 4e-06,
+                  "show_more_score": 0.003482
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "La mamma di Thiago ha fatto bene a fare cio'che ha fatto.Giudicate Senza sapere.Quando c'\u00e8 un giudice di mezzo,la cosa \u00e8 serissima.La mamma non lo ha abbandonato.Sempre bravi ad espletare sentenze,Senza sapere.",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "madame x",
+                  "sec_uid": "MS4wLjABAAAAVNm809O3ghCiW2bikueL20g1dA6Rnsu5Rcbkut2FYPwEvYDU2bTFFfTuZkslqxGq",
+                  "uid": "7225006371711632389",
+                  "unique_id": "blue.eyes.11",
+                  "avatar_thumb": {
+                    "uri": "tos-useast2a-avt-0068-giso/78ea9d5d0caca8da147d206a1f71decf",
+                    "url_list": [
+                      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/78ea9d5d0caca8da147d206a1f71decf~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=5a602550&x-expires=1753722000&x-signature=qpKhMooV6sb96tx%2B3bVAjBvkqJk%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/78ea9d5d0caca8da147d206a1f71decf~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=db981413&x-expires=1753722000&x-signature=BriOj4nRcVvf%2B7EJFO3qERRM2LA%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7530357500676181270",
+                "cid": "7530368106469376790",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753300465,
+                "digg_count": 3526,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 66,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Mary\u2019s comment: ma smettetela di giudicare questa mamma. voi conoscete quello che la mente malata di Thiago vi diceva",
+                  "title": "#mamma #thiago #fedesumo\u2763\ufe0f #bergamo ",
+                  "url": "https://m.tiktok.com/v/7530357500676181270.html?_d=eh51gj08ij5f83&comment_author_id=7392380715154932769&preview_pb=0&share_comment_id=7530368106469376790&share_item_id=7530357500676181270&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 1.4e-05,
+                  "show_more_score": 0.012178
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "ma smettetela di giudicare questa mamma. voi conoscete quello che la mente malata di Thiago vi diceva",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Mary",
+                  "sec_uid": "MS4wLjABAAAAikMIU6IqyclLoBGBDGN9uJSDubAnZHuuSnLOBz9pKXJ0jXvGoz0gpkrfDHUq4vfM",
+                  "uid": "7392380715154932769",
+                  "unique_id": "mariapiapiapia0",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/72f8eb8f1d147821d2c79782f1d131ff",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/72f8eb8f1d147821d2c79782f1d131ff~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=bf995e33&x-expires=1753722000&x-signature=BbbkI%2BKkfx5B%2FdGAT5hxG5lsiwY%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/72f8eb8f1d147821d2c79782f1d131ff~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=b75b7a2b&x-expires=1753722000&x-signature=h10l8wrmUAcZ35vpVint98t0TEc%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/72f8eb8f1d147821d2c79782f1d131ff~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=de0e85f7&x-expires=1753722000&x-signature=5Q0Npt0LdCbwg7UCcq5VXiftlGw%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              }
+            ],
+            "cursor": 10,
+            "extra": {
+              "fatal_item_ids": null,
+              "logid": null,
+              "now": 1753637407000
+            },
+            "has_filtered_comments": 0,
+            "has_more": true,
+            "log_pb": {
+              "impr_id": "20250727173006BF57C6450C909D3384FC"
+            },
+            "reply_style": 2,
+            "status_code": 0,
+            "status_msg": "",
+            "top_gifts": null,
+            "total": 7032
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "cycle_id": 2,
+      "start_time": "2025-07-27 13:30:26.241754",
+      "end_time": null,
+      "videos_processed": 1,
+      "diggs_made": 1,
+      "follows_made": 0,
+      "loads_made": 1,
+      "videos_collected": [
+        "7529940066978778390"
+      ],
+      "videos_watched": [
+        "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/o4CWJ7hZguG9I7KRL2ATRQIGfAJQfabGubeuKf/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=3798&bt=1899&cs=0&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=0&rc=ODo6NDo0Omg2ZDdkOTNmNkBpanhsbXk5cnl1NDMzbzczNUBfY2MtMF40XjIxMV80YV4uYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=58d9a0a0a0dbc8cc8499f3e1ec8bf687&tk=tt_chain_token"
+      ],
+      "actions": [
+        {
+          "video_id": "7529940066978778390",
+          "action_type": "digg",
+          "timestamp": "2025-07-27 13:30:27.413740",
+          "success": true,
+          "details": null,
+          "api_response": null
+        }
+      ],
+      "api_responses": [
+        {
+          "id": "trending_batch_2",
+          "endpoint": "get_trending",
+          "timestamp": "2025-07-27 13:30:26.806549",
+          "success": true,
+          "response_data": {
+            "item_list": [
+              {
+                "aigc_description": "",
+                "ba_info": null,
+                "category_type": 101,
+                "ad_authorization": null,
+                "ad_label_version": null,
+                "anchors": [],
+                "author": {
+                  "avatar_larger": "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/f76f9eeaebb46b86c8f0eb19efabcca6~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=0d47ca17&x-expires=1753808400&x-signature=UDLPLa%2B1c1iTgXBliSFw7yOk7Qc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "avatar_medium": "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/f76f9eeaebb46b86c8f0eb19efabcca6~tplv-tiktokx-cropcenter:720:720.jpeg?dr=10399&refresh_token=f0db1635&x-expires=1753808400&x-signature=kpo%2FN4%2Fw7IUnqMRxu275jXPT%2BeY%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "avatar_thumb": "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/f76f9eeaebb46b86c8f0eb19efabcca6~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=698437cb&x-expires=1753808400&x-signature=%2BMJcI3THP60tXle6tRKAD0lOoQE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a",
+                  "comment_setting": 0,
+                  "download_setting": 0,
+                  "duet_setting": 0,
+                  "ftc": false,
+                  "id": "6804071151779431429",
+                  "is_ad_virtual": false,
+                  "is_embed_banned": false,
+                  "nickname": "live_on_emotions",
+                  "open_favorite": false,
+                  "private_account": false,
+                  "relation": 0,
+                  "sec_uid": "MS4wLjABAAAAtpdyZr6Fj1vzrrftWFrRyeihFvxs-xF4I4QDDVjwa0AtmN83ZWq_Y9Xol9-lbBn_",
+                  "secret": false,
+                  "signature": "Produzione Contenuti e Formazione",
+                  "stitch_setting": 0,
+                  "unique_id": "live_on_emotions",
+                  "verified": false
+                },
+                "backend_source_event_tracking": "fyp_ug_content",
+                "challenges": [
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "1647446785320965",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "robertocenci"
+                  },
+                  {
+                    "cover_larger": "",
+                    "cover_medium": "",
+                    "cover_thumb": "",
+                    "desc": "",
+                    "id": "55165822",
+                    "profile_larger": "",
+                    "profile_medium": "",
+                    "profile_thumb": "",
+                    "title": "paolobonolis"
+                  }
+                ],
+                "collected": false,
+                "contents": [
+                  {
+                    "desc": "Dramma a Formentera!",
+                    "text_extra": []
+                  },
+                  {
+                    "desc": "Turista romano aggredito da psicopatico di Cologno Monz\u00fa.",
+                    "text_extra": []
+                  },
+                  {
+                    "desc": "SKIBIDIBOPPI",
+                    "text_extra": []
+                  },
+                  {
+                    "desc": "",
+                    "text_extra": []
+                  },
+                  {
+                    "desc": "#robertocenci ",
+                    "text_extra": [
+                      {
+                        "aweme_id": "",
+                        "end": 13,
+                        "hashtag_name": "robertocenci",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 0,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      }
+                    ]
+                  },
+                  {
+                    "desc": "#paolobonolis ",
+                    "text_extra": [
+                      {
+                        "aweme_id": "",
+                        "end": 13,
+                        "hashtag_name": "paolobonolis",
+                        "is_commerce": false,
+                        "sec_uid": null,
+                        "start": 0,
+                        "type": 1,
+                        "user_id": null,
+                        "user_unique_id": null,
+                        "sub_type": 0
+                      }
+                    ]
+                  }
+                ],
+                "create_time": 1753200796,
+                "desc": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                "digged": false,
+                "diversification_id": 10088,
+                "duet_display": 0,
+                "duet_enabled": true,
+                "for_friend": false,
+                "id": "7529940066978778390",
+                "item_comment_status": 0,
+                "item_control": {
+                  "can_repost": true,
+                  "can_comment": null,
+                  "can_creator_redirect": null,
+                  "can_music_redirect": null,
+                  "can_share": null
+                },
+                "music": {
+                  "album": "Bon jour Sicile",
+                  "author_name": "Gruppo Folk Tradizioni di Sicilia",
+                  "cover_large": "https://p77-sg.tiktokcdn.com/aweme/720x720/tos-alisg-v-2774/7aee25f6de5f4420a393d6bb00df2c48.jpeg",
+                  "cover_medium": "https://p77-sg.tiktokcdn.com/aweme/200x200/tos-alisg-v-2774/7aee25f6de5f4420a393d6bb00df2c48.jpeg",
+                  "cover_thumb": "https://p77-sg.tiktokcdn.com/aweme/100x100/tos-alisg-v-2774/7aee25f6de5f4420a393d6bb00df2c48.jpeg",
+                  "duration": 52,
+                  "id": "6709399637616248834",
+                  "is_copyrighted": false,
+                  "original": false,
+                  "play_url": "https://sf16-ies-music-sg.tiktokcdn.com/obj/tos-alisg-ve-2774/oAQFcjPZfIdjtQ9BEn0gFMDrFQfNCBxF1MVzka",
+                  "title": "Tarantella scatenata"
+                },
+                "offical_item": false,
+                "original_item": false,
+                "poi": {
+                  "address": "Islas Baleares, Espa\u00f1a",
+                  "category": "Outdoors and Traveling",
+                  "city": "Balearic Islands",
+                  "city_code": "6424360",
+                  "country": "",
+                  "country_code": "2510769",
+                  "father_poi_id": "",
+                  "father_poi_name": "Balearic Islands",
+                  "id": "21568226309596052",
+                  "name": "Formentera",
+                  "province": "",
+                  "tt_type_code": "08a1b0",
+                  "tt_type_name_medium": "Natural Attraction",
+                  "tt_type_name_super": "Outdoors and Traveling",
+                  "tt_type_name_tiny": "Island",
+                  "type": 0,
+                  "type_code": ""
+                },
+                "private_item": false,
+                "secret": false,
+                "share_enabled": true,
+                "stats": {
+                  "collect_count": 14000,
+                  "comment_count": 865,
+                  "digg_count": 217600,
+                  "play_count": 5500000,
+                  "share_count": 19500
+                },
+                "stats_v2": {
+                  "collect_count": "13953",
+                  "comment_count": "865",
+                  "digg_count": "217600",
+                  "play_count": "5500000",
+                  "repost_count": "0",
+                  "share_count": "19500"
+                },
+                "stitch_display": 0,
+                "stitch_enabled": true,
+                "text_extra": [
+                  {
+                    "aweme_id": "",
+                    "end": 105,
+                    "hashtag_name": "robertocenci",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 92,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  },
+                  {
+                    "aweme_id": "",
+                    "end": 120,
+                    "hashtag_name": "paolobonolis",
+                    "is_commerce": false,
+                    "sec_uid": null,
+                    "start": 107,
+                    "type": 1,
+                    "user_id": null,
+                    "user_unique_id": null,
+                    "sub_type": 0
+                  }
+                ],
+                "text_language": "it",
+                "text_translatable": true,
+                "video": {
+                  "vq_score": "68.29",
+                  "bitrate": 1944675,
+                  "bitrate_info": [
+                    {
+                      "bitrate": 1944675,
+                      "codec_type": "h264",
+                      "gear_name": "normal_540_0",
+                      "play_addr": {
+                        "data_size": 1264039,
+                        "file_cs": "c:0-5865-57ce",
+                        "file_hash": "967b909e199708bf1be5a8c00ae0b311",
+                        "height": 1024,
+                        "uri": "v24044gl0000d1vrevfog65vij4irurg",
+                        "url_key": "v24044gl0000d1vrevfog65vij4irurg_h264_540p_1944675",
+                        "url_list": [
+                          "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/o4CWJ7hZguG9I7KRL2ATRQIGfAJQfabGubeuKf/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=3798&bt=1899&cs=0&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=0&rc=ODo6NDo0Omg2ZDdkOTNmNkBpanhsbXk5cnl1NDMzbzczNUBfY2MtMF40XjIxMV80YV4uYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=58d9a0a0a0dbc8cc8499f3e1ec8bf687&tk=tt_chain_token",
+                          "https://v19-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/o4CWJ7hZguG9I7KRL2ATRQIGfAJQfabGubeuKf/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=3798&bt=1899&cs=0&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=0&rc=ODo6NDo0Omg2ZDdkOTNmNkBpanhsbXk5cnl1NDMzbzczNUBfY2MtMF40XjIxMV80YV4uYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=58d9a0a0a0dbc8cc8499f3e1ec8bf687&tk=tt_chain_token",
+                          "https://www.tiktok.com/aweme/v1/play/?faid=1988&file_id=13acd076ba444a53ae77a13701f7f7b5&is_play_url=1&item_id=7529940066978778390&line=0&ply_type=2&signaturev3=dmlkZW9faWQ7ZmlsZV9pZDtpdGVtX2lkLmNiYTUxYjA1OThmNThjMGUwOGIyOWIwZWE5OTk5YjEx&tk=tt_chain_token&video_id=v24044gl0000d1vrevfog65vij4irurg"
+                        ],
+                        "width": 576
+                      },
+                      "quality_type": 20,
+                      "mvmaf": "\"{\\\"v2.0\\\": {\\\"srv1\\\": {\\\"v1080\\\": 92.056, \\\"v960\\\": 94.368, \\\"v864\\\": 96.08, \\\"v720\\\": 98.582}, \\\"ori\\\": {\\\"v1080\\\": 81.718, \\\"v960\\\": 85.824, \\\"v864\\\": 87.954, \\\"v720\\\": 92.618}}}\""
+                    },
+                    {
+                      "bitrate": 992520,
+                      "codec_type": "h265_hvc1",
+                      "gear_name": "adapt_540_1",
+                      "play_addr": {
+                        "data_size": 645138,
+                        "file_cs": "c:0-6075-899a",
+                        "file_hash": "780bf41c737d1f401528afd630ea3e2e",
+                        "height": 1024,
+                        "uri": "v24044gl0000d1vrevfog65vij4irurg",
+                        "url_key": "v24044gl0000d1vrevfog65vij4irurg_bytevc1_540p_992520",
+                        "url_list": [
+                          "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/ogZYAAbc2QJIJIEhKfLeWGAIevEB73IKG2GfR7/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1938&bt=969&cs=2&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=11&rc=NzdpaDRlZTM7Mzg3OzVkZEBpanhsbXk5cnl1NDMzbzczNUAtXjYuMl42XjAxYGJiMS8zYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=45c4759e1111e203b3fb03fa13d45a39&tk=tt_chain_token",
+                          "https://v19-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/ogZYAAbc2QJIJIEhKfLeWGAIevEB73IKG2GfR7/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=1938&bt=969&cs=2&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=11&rc=NzdpaDRlZTM7Mzg3OzVkZEBpanhsbXk5cnl1NDMzbzczNUAtXjYuMl42XjAxYGJiMS8zYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=45c4759e1111e203b3fb03fa13d45a39&tk=tt_chain_token",
+                          "https://www.tiktok.com/aweme/v1/play/?faid=1988&file_id=6a2a42e8e4c54038a09bab511e9fa404&is_play_url=1&item_id=7529940066978778390&line=0&ply_type=2&signaturev3=dmlkZW9faWQ7ZmlsZV9pZDtpdGVtX2lkLjkxZDVhNmMwMjdkYzhiOWRkNGU5OTVkMTdhZGFlNjFk&tk=tt_chain_token&video_id=v24044gl0000d1vrevfog65vij4irurg"
+                        ],
+                        "width": 576
+                      },
+                      "quality_type": 28,
+                      "mvmaf": "\"{\\\"v2.0\\\": {\\\"srv1\\\": {\\\"v1080\\\": 84.47, \\\"v960\\\": 88.198, \\\"v864\\\": 89.69, \\\"v720\\\": 93.515}, \\\"ori\\\": {\\\"v1080\\\": 72.552, \\\"v960\\\": 76.684, \\\"v864\\\": 79.875, \\\"v720\\\": 85.142}}}\""
+                    }
+                  ],
+                  "cla_info": {
+                    "caption_infos": [],
+                    "captions_type": null,
+                    "enable_auto_caption": true,
+                    "original_language_info": null,
+                    "has_original_audio": true,
+                    "no_caption_reason": 3
+                  },
+                  "codec_type": "h264",
+                  "cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/oQU3gcXBUyQ7v7ffWNMAg7feGUhAcG3RU2QS8V~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=u7VXkVTTPJ7XEofVMEvOtVE7OAI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "definition": "540p",
+                  "download_addr": "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068-no/oUaGGIAJIKhQbMRwEGAZeQLBZf3RzWe2fmAj77/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=2482&bt=1241&cs=0&ds=3&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=0&rc=Zzs8ZmllNjRlZDozPGk8aEBpanhsbXk5cnl1NDMzbzczNUBgYF8vL2JeXl8xYTEtLjAyYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=ba9c9a77bea60e92bd81982ef413b8a7&tk=tt_chain_token",
+                  "duration": 5,
+                  "dynamic_cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/ocAfuJAQI7GAfQ9L2MGZzhu7fDKWGRE9QPJ9eb~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=f5fWFM3mZYkiiC8oWWr9%2FHXKXRA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "encode_user_tag": "",
+                  "encoded_type": "normal",
+                  "format": "mp4",
+                  "height": 1024,
+                  "id": "7529940066978778390",
+                  "origin_cover": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/o8MfcSAgQ7MAfQfX2cGyHhc7ebUWGRG7gST783~tplv-tiktokx-origin.image?dr=10395&x-expires=1753808400&x-signature=nRw2maXvyjGIz5DAGcRx8mf32P8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a",
+                  "play_addr": "https://v16-webapp-prime.tiktok.com/video/tos/no1a/tos-no1a-ve-0068c001-no/o4CWJ7hZguG9I7KRL2ATRQIGfAJQfabGubeuKf/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=3&dr=0&lr=all&cd=0%7C0%7C0%7C&cv=1&br=3798&bt=1899&cs=0&ds=6&ft=-Csk_mctPD12NaLz_h-Ux_U5hY3W3wv257cAp&mime_type=video_mp4&qs=0&rc=ODo6NDo0Omg2ZDdkOTNmNkBpanhsbXk5cnl1NDMzbzczNUBfY2MtMF40XjIxMV80YV4uYSNvbzFmMmRjYnNhLS1kMTFzcw%3D%3D&btag=e000b0000&expire=1753810231&l=202507271730266A8E2DDF9EF2143DBD1F&ply_type=2&policy=2&signature=58d9a0a0a0dbc8cc8499f3e1ec8bf687&tk=tt_chain_token",
+                  "ratio": "540p",
+                  "subtitle_infos": [],
+                  "video_quality": "normal",
+                  "volume_info": {
+                    "loudness": -15.4,
+                    "peak": 0.56234
+                  },
+                  "width": 576,
+                  "zoom_cover": {
+                    "240": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/oQU3gcXBUyQ7v7ffWNMAg7feGUhAcG3RU2QS8V~tplv-photomode-zoomcover:240:240.jpeg?dr=10375&x-expires=1753808400&x-signature=5R5S2Pj24X04dcS3UYbUHjUxwwc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "480": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/oQU3gcXBUyQ7v7ffWNMAg7feGUhAcG3RU2QS8V~tplv-photomode-zoomcover:480:480.jpeg?dr=10375&x-expires=1753808400&x-signature=nLx7TLgNKxxCOH2xtBNIytq%2BlkY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "720": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/oQU3gcXBUyQ7v7ffWNMAg7feGUhAcG3RU2QS8V~tplv-photomode-zoomcover:720:720.jpeg?dr=10375&x-expires=1753808400&x-signature=%2FGRcehiaqjv5kxPqpOG1HH6b1Ic%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1",
+                    "960": "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-p-0037-no/oQU3gcXBUyQ7v7ffWNMAg7feGUhAcG3RU2QS8V~tplv-photomode-zoomcover:960:960.jpeg?dr=10375&x-expires=1753808400&x-signature=ekgxj9BlW0H%2BMX6Wx1AGnXF%2B9To%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=no1a&ftpl=1"
+                  }
+                }
+              }
+            ],
+            "extra": {
+              "fatal_item_ids": [],
+              "logid": "202507271730266A8E2DDF9EF2143DBD1F",
+              "now": 1753637426000
+            },
+            "has_more": true,
+            "statusCode": 0,
+            "status_code": 0,
+            "status_msg": "",
+            "log_pb": {
+              "impr_id": "202507271730266A8E2DDF9EF2143DBD1F"
+            }
+          },
+          "error": null
+        },
+        {
+          "id": "digg_7529940066978778390",
+          "endpoint": "digg_video",
+          "timestamp": "2025-07-27 13:30:27.069435",
+          "success": true,
+          "response_data": {
+            "extra": {
+              "fatal_item_ids": [],
+              "logid": "20250727173026ABBAFEE5B4A6C034980E",
+              "now": 1753637426000
+            },
+            "is_digg": 1,
+            "status_code": 0,
+            "status_msg": "",
+            "log_pb": {
+              "impr_id": "20250727173026ABBAFEE5B4A6C034980E"
+            }
+          },
+          "error": null
+        },
+        {
+          "id": "list_comments_7529940066978778390",
+          "endpoint": "list_comments",
+          "timestamp": "2025-07-27 13:30:27.403181",
+          "success": true,
+          "response_data": {
+            "alias_comment_deleted": false,
+            "comments": [
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530189944116986646",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753258990,
+                "digg_count": 4554,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 12,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Giuseppe Luzzi\u2019s comment: Roberto Cenci, lui puo\u2019",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6995542848251151366&preview_pb=0&share_comment_id=7530189944116986646&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 7e-06,
+                  "show_more_score": 0.061022
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Roberto Cenci, lui puo\u2019",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Giuseppe Luzzi",
+                  "sec_uid": "MS4wLjABAAAALOIbjfhYS3fzBj8BXd_1oVWk01TP-y6CNrRdkxb7z23luk2PcDNqjXIpGMuld924",
+                  "uid": "6995542848251151366",
+                  "unique_id": "giuseppeluzzi",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/5fe7d988eae473bcf967e4f75096ab50",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/5fe7d988eae473bcf967e4f75096ab50~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=847136af&x-expires=1753722000&x-signature=aEdx2ce60Zmbnzy641zlAX1SKdk%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/5fe7d988eae473bcf967e4f75096ab50~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=cca30fef&x-expires=1753722000&x-signature=U5D%2BxVTcd47h9vyquejumI4wtyQ%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/5fe7d988eae473bcf967e4f75096ab50~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=7327a29e&x-expires=1753722000&x-signature=VtXF5k5lYmf7wHHig66PEia8fnw%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530265260834538262",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753276516,
+                "digg_count": 465,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 16,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Francesca Lopi\u2019s comment: ma chi \u00e8 quello che da lo schiaffetto",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6810355453718119429&preview_pb=0&share_comment_id=7530265260834538262&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 0.00017,
+                  "show_more_score": 0.404112
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "ma chi \u00e8 quello che da lo schiaffetto",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Francesca Lopi",
+                  "sec_uid": "MS4wLjABAAAA0SR9uUGKltK7O-NZPeqqLzdCSBpLtaonUPVdbE6QFzo5RPEhvY2RuDJYYZ0KdpGz",
+                  "uid": "6810355453718119429",
+                  "unique_id": "francescalopi",
+                  "avatar_thumb": {
+                    "uri": "tos-maliva-avt-0068/5ea423263e7eef407b21d83f6711ae2d",
+                    "url_list": [
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/5ea423263e7eef407b21d83f6711ae2d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=80c88020&x-expires=1753722000&x-signature=8qmuqKoe%2FEYmr07jB0x6%2F5BvZM4%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/5ea423263e7eef407b21d83f6711ae2d~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=6258f966&x-expires=1753722000&x-signature=GmlhNHYqrxUvxtbduszfGqRBD9k%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/5ea423263e7eef407b21d83f6711ae2d~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=929bec91&x-expires=1753722000&x-signature=7eITD%2FJ3gvR5wVPPn4NL6ZhwzBQ%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530264961362346774",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753276454,
+                "digg_count": 206,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 0,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Malos Malos\u2019s comment: Il grande Roberto cenci il top del top",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=7298646748700361760&preview_pb=0&share_comment_id=7530264961362346774&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 1e-06,
+                  "show_more_score": 1e-06
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Il grande Roberto cenci il top del top",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Malos Malos",
+                  "sec_uid": "MS4wLjABAAAA2eb15sD4CaJ7O2QTaQDJfTSOcVxRiEZxhqn3OvRBtrelwu-G7eHHYLwbtcCcMxqb",
+                  "uid": "7298646748700361760",
+                  "unique_id": "malos.malos",
+                  "avatar_thumb": {
+                    "uri": "tos-useast2a-avt-0068-euttp/ebfda7565b8a5d178cc692feb9f66393",
+                    "url_list": [
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/ebfda7565b8a5d178cc692feb9f66393~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=c115b875&x-expires=1753722000&x-signature=4GwbF1eOKU5wsytKh35L4DaPUiY%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/ebfda7565b8a5d178cc692feb9f66393~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=ce30ba44&x-expires=1753722000&x-signature=jqstcDVC7GG9SbmG0iIrgtxsTgk%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/ebfda7565b8a5d178cc692feb9f66393~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=b42dfb48&x-expires=1753722000&x-signature=zGFl2Nk%2FYXT3hLPGTX9YXGpDVuU%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530260128005473046",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753275326,
+                "digg_count": 89,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 0,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Il Re della Bufala\u2019s comment: Roberto Cenci pu\u00f2 anche schiaffeggiare Bonolis \ud83d\ude05\ud83d\ude05",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6816367333981701126&preview_pb=0&share_comment_id=7530260128005473046&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 7e-06,
+                  "show_more_score": 2.1e-05
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Roberto Cenci pu\u00f2 anche schiaffeggiare Bonolis \ud83d\ude05\ud83d\ude05",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Il Re della Bufala",
+                  "sec_uid": "MS4wLjABAAAAb8QepAU6G6IalvARTfSNB3TjyIK7jvTzNMA2QFFcNE_PKIXzWcnWEcr6kTmfawhk",
+                  "uid": "6816367333981701126",
+                  "unique_id": "ilredellabufala",
+                  "avatar_thumb": {
+                    "uri": "tos-maliva-avt-0068/b1134cec6ed64e5f7c522fe389abe79a",
+                    "url_list": [
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/b1134cec6ed64e5f7c522fe389abe79a~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=3684fdaa&x-expires=1753722000&x-signature=52FCh6ugm%2FfVuHN3NVoZsfu6%2B10%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/b1134cec6ed64e5f7c522fe389abe79a~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=96206715&x-expires=1753722000&x-signature=MQfJTpHXBYaqbJo9v8oU4XWPF3Q%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/b1134cec6ed64e5f7c522fe389abe79a~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=d4be1fa2&x-expires=1753722000&x-signature=MyZSIkCaAIH14LH0DqboHGWkoJM%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530274096745022230",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753278577,
+                "digg_count": 3,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 5,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "ireneposa142\u2019s comment: come fate a vedere che \u00e8 Roberto",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=7140739102958257157&preview_pb=0&share_comment_id=7530274096745022230&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 3.3e-05,
+                  "show_more_score": 0.04432
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "come fate a vedere che \u00e8 Roberto",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "ireneposa142",
+                  "sec_uid": "MS4wLjABAAAAJpYgqi1KuHkhTU2bit8jW4HBDXglsk02nz7W7OalxCg4XtWXcYgoggmsOjHxGi8o",
+                  "uid": "7140739102958257157",
+                  "unique_id": "ireneposa142",
+                  "avatar_thumb": {
+                    "uri": "tos-useast2a-avt-0068-euttp/e8a2e0aa9fc29b2c32504783da4a279c",
+                    "url_list": [
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/e8a2e0aa9fc29b2c32504783da4a279c~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=f97cbcd8&x-expires=1753722000&x-signature=vD5RvJBaJR6sl01QE7FOlNndrrs%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/e8a2e0aa9fc29b2c32504783da4a279c~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=ac33dd65&x-expires=1753722000&x-signature=AM33RHatXPWbpHV4CqCLt%2BVLEtw%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-common-sign-useastred.tiktokcdn-eu.com/tos-useast2a-avt-0068-euttp/e8a2e0aa9fc29b2c32504783da4a279c~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=5a6464b5&x-expires=1753722000&x-signature=Y6wvpPRxRsfTd4wG0Zr1fj2W4Nk%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530255018655974166",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753274140,
+                "digg_count": 212,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 24,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Cabballeros\u2019s comment: e l'altro chi \u00e8?",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6963572479444927494&preview_pb=0&share_comment_id=7530255018655974166&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 2.3e-05,
+                  "show_more_score": 0.075191
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "e l'altro chi \u00e8?",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Cabballeros",
+                  "sec_uid": "MS4wLjABAAAAPb0b9JOnRgySvseWGn0pMz6jRxATmB1LuvKrRVmLM6U8FTc72OceRUcbvo6gGFSu",
+                  "uid": "6963572479444927494",
+                  "unique_id": "pettirossodacombattiment",
+                  "avatar_thumb": {
+                    "uri": "tos-maliva-avt-0068/8036542e4b24f31d6b24b2cf98691472",
+                    "url_list": [
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8036542e4b24f31d6b24b2cf98691472~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=11c9a431&x-expires=1753722000&x-signature=j7xx5yOQjXn3ZNsO8RXEnkA07ms%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8036542e4b24f31d6b24b2cf98691472~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=4f2f09c3&x-expires=1753722000&x-signature=y1weCjv3otnBexCJeQ2mbiXfG80%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/8036542e4b24f31d6b24b2cf98691472~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=d3280943&x-expires=1753722000&x-signature=f%2FMPpvaPo7JapONMaJRaB6sXEwc%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530352141472154390",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753296747,
+                "digg_count": 12,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 2,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "Badgirl\u2764\ufe0f\u2019s comment: Quello con il costume arancione l avevo scambiato per tommaso starace \ud83d\ude05",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=7316691295936906273&preview_pb=0&share_comment_id=7530352141472154390&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 1.5e-05,
+                  "show_more_score": 0.01132
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Quello con il costume arancione l avevo scambiato per tommaso starace \ud83d\ude05",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "Badgirl\u2764\ufe0f",
+                  "sec_uid": "MS4wLjABAAAAv-F3I3qDo9MG-umXCVssjZr5NxiIuSEY4ZNgsmj1wAZ_BNEtJO6CropvFi4v-qff",
+                  "uid": "7316691295936906273",
+                  "unique_id": "..badgirl99..678",
+                  "avatar_thumb": {
+                    "uri": "tos-useast2a-avt-0068-euttp/0cd5150e3e06534c0c52b9b49141ee6f",
+                    "url_list": [
+                      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/0cd5150e3e06534c0c52b9b49141ee6f~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=7cae2114&x-expires=1753722000&x-signature=te1u5w9lVeS8yL2r50kWHb6wp9g%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/0cd5150e3e06534c0c52b9b49141ee6f~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=2c38f884&x-expires=1753722000&x-signature=tDgG%2FwfpPpZdUfsXI8pVV6gyVp8%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530272511037178647",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753278206,
+                "digg_count": 5,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 0,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "resilienza\u2019s comment: solo Roberto poteva permettersi\ud83d\ude1cgrande Paolo\ud83e\udd70\ud83e\udd70",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6614444973570867205&preview_pb=0&share_comment_id=7530272511037178647&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 8e-06,
+                  "show_more_score": 2e-06
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "solo Roberto poteva permettersi\ud83d\ude1cgrande Paolo\ud83e\udd70\ud83e\udd70",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "resilienza",
+                  "sec_uid": "MS4wLjABAAAAaD8G-b9NsKWWsbYMZtArZG-NqtyhJst-aDDZZ0lSeiCssm5Z10cRmkCkH4SGU427",
+                  "uid": "6614444973570867205",
+                  "unique_id": "resilienza51",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/a7b9c167639f509070860c6be61d02ac",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/a7b9c167639f509070860c6be61d02ac~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=22ade819&x-expires=1753722000&x-signature=T5hG9%2Bhm7f8Xej53G8O%2FEc1CAc8%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/a7b9c167639f509070860c6be61d02ac~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=d31f0ef9&x-expires=1753722000&x-signature=oVKgtQ9Wm4ZNTYspLLn2Qcns8sU%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/a7b9c167639f509070860c6be61d02ac~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=ad1d0c8c&x-expires=1753722000&x-signature=e0CLZ9WOmO3sjD6z757v3gWlNGs%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530217922280620822",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753265502,
+                "digg_count": 8162,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 28,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "\ua9c1\u262f\u0f12U Picciriddu\u0f12\u262f\ua9c2\u2019s comment: Ma \u00e8 Paolo Bonolis \ud83d\ude33",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=7098690100137149446&preview_pb=0&share_comment_id=7530217922280620822&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 2.9e-05,
+                  "show_more_score": 0.045762
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Ma \u00e8 Paolo Bonolis \ud83d\ude33",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "\ua9c1\u262f\u0f12U Picciriddu\u0f12\u262f\ua9c2",
+                  "sec_uid": "MS4wLjABAAAAoeu_8i-kJPLnlJhgwY9lmi0UuH6mO4jHdTBLV5sivjf-M72jY-wXoi580wSxFylc",
+                  "uid": "7098690100137149446",
+                  "unique_id": "angeloediavoloo",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/f0ad373efc3e24109d07aee7af68cf35",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f0ad373efc3e24109d07aee7af68cf35~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=a3327030&x-expires=1753722000&x-signature=9CQiGQjAXOpYlg0cpVg4RenEPzo%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f0ad373efc3e24109d07aee7af68cf35~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=b809fa41&x-expires=1753722000&x-signature=tBXcNzpGHFv%2BtJ72%2F83rQUxn4kE%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/f0ad373efc3e24109d07aee7af68cf35~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=f204035a&x-expires=1753722000&x-signature=z6%2FKUe4uoRG11VHmFFTSM8bdun8%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              },
+              {
+                "author_pin": false,
+                "aweme_id": "7529940066978778390",
+                "cid": "7530352307444597526",
+                "collect_stat": 0,
+                "comment_language": "it",
+                "comment_post_item_ids": null,
+                "create_time": 1753296784,
+                "digg_count": 105,
+                "forbid_reply_with_video": true,
+                "image_list": null,
+                "is_author_digged": false,
+                "is_comment_translatable": true,
+                "label_list": null,
+                "no_show": false,
+                "reply_comment": null,
+                "reply_comment_total": 13,
+                "reply_id": "0",
+                "reply_to_reply_id": "0",
+                "share_info": {
+                  "acl": {
+                    "code": 0,
+                    "extra": "{}"
+                  },
+                  "desc": "user000\u2019s comment: Per coloro che non capiscono e hanno bisogno di ulteriori spiegazioni, vorrei spiegarlo nel modo pi\u00f9 completo possibile. Dato che mi sono preso il tempo di imparare e studiare seriamente l'argomento, sono sicuro che chiunque ascolti questa spiegazione sar\u00e0 in grado di capirla facilmente. Cercher\u00f2 di usare il linguaggio il pi\u00f9 facilmente possibile e cercher\u00f2 di evitare i termini tecnici che potrebbero confonderlo in modo che tutti possano applicarlo e trasmetterlo correttamente.\nPrima di tutto, bisogna capire che tutto nel mondo, sia naturale che artificiale, ha sempre un posto dove andare, nulla accade irrazionalmente, tutto \u00e8 logico e scientificamente spiegabile, e come persona che ha studiato e rivisto questi dati per molto tempo, sono pronto a spiegarti questo nel modo pi\u00f9 dettagliato.\nSpiegarlo scientificamente richiede l'uso di dati e principi comprovati. I principi che spiegher\u00f2 non sono solo parole senza peso o storie che non lo supportano. Cercher\u00f2 di illustrare e utilizzare il ragionamento scientifico in modo che tutti possano capirlo facilmente e certamente applicarlo.\nTe lo garantisco, nessuno pu\u00f2 spiegarlo facilmente come me. Che sia per motivi di fisica, chimica, biologia o anche matematica, sono pronto a darti esempi relativi alla vita di tutti i giorni. Ma in questo caso, per darti un breve riassunto e una spiegazione scientifica pi\u00f9 semplice, devo dire che ha la spiegazione pi\u00f9 ovvia, e la risposta \u00e8, non lo so.",
+                  "title": "Dramma a Formentera! Turista romano aggredito da psicopatico di Cologno Monz\u00fa. SKIBIDIBOPPI #robertocenci  #paolobonolis ",
+                  "url": "https://m.tiktok.com/v/7529940066978778390.html?_d=eh51gj08ij5f83&comment_author_id=6964477130983293957&preview_pb=0&share_comment_id=7530352307444597526&share_item_id=7529940066978778390&sharer_language=en&source=h5_m&u_code=el88b2c3l0leag"
+                },
+                "sort_extra_score": {
+                  "reply_score": 1.7e-05,
+                  "show_more_score": 0.00605
+                },
+                "sort_tags": "{\"top_list\":1}",
+                "status": 1,
+                "stick_position": 0,
+                "text": "Per coloro che non capiscono e hanno bisogno di ulteriori spiegazioni, vorrei spiegarlo nel modo pi\u00f9 completo possibile. Dato che mi sono preso il tempo di imparare e studiare seriamente l'argomento, sono sicuro che chiunque ascolti questa spiegazione sar\u00e0 in grado di capirla facilmente. Cercher\u00f2 di usare il linguaggio il pi\u00f9 facilmente possibile e cercher\u00f2 di evitare i termini tecnici che potrebbero confonderlo in modo che tutti possano applicarlo e trasmetterlo correttamente.\nPrima di tutto, bisogna capire che tutto nel mondo, sia naturale che artificiale, ha sempre un posto dove andare, nulla accade irrazionalmente, tutto \u00e8 logico e scientificamente spiegabile, e come persona che ha studiato e rivisto questi dati per molto tempo, sono pronto a spiegarti questo nel modo pi\u00f9 dettagliato.\nSpiegarlo scientificamente richiede l'uso di dati e principi comprovati. I principi che spiegher\u00f2 non sono solo parole senza peso o storie che non lo supportano. Cercher\u00f2 di illustrare e utilizzare il ragionamento scientifico in modo che tutti possano capirlo facilmente e certamente applicarlo.\nTe lo garantisco, nessuno pu\u00f2 spiegarlo facilmente come me. Che sia per motivi di fisica, chimica, biologia o anche matematica, sono pronto a darti esempi relativi alla vita di tutti i giorni. Ma in questo caso, per darti un breve riassunto e una spiegazione scientifica pi\u00f9 semplice, devo dire che ha la spiegazione pi\u00f9 ovvia, e la risposta \u00e8, non lo so.",
+                "text_extra": [],
+                "trans_btn_style": 1,
+                "user": {
+                  "nickname": "user000",
+                  "sec_uid": "MS4wLjABAAAAw0RpP6BF6xxNXDaYqPcdRwn9QZ88xX_F4EOl1iy2dAHAOIA6h8XVeFXVWezmJJqO",
+                  "uid": "6964477130983293957",
+                  "unique_id": "rastafarijah1",
+                  "avatar_thumb": {
+                    "uri": "tos-no1a-avt-0068c001-no/d3081461affc914c3e1058ecfcb6ac44",
+                    "url_list": [
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/d3081461affc914c3e1058ecfcb6ac44~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=9b04cc49&x-expires=1753722000&x-signature=N44saGxZca3YHfsiy%2FvTe%2F9kLjU%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p19-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/d3081461affc914c3e1058ecfcb6ac44~tplv-tiktokx-cropcenter:100:100.jpg?dr=10399&refresh_token=a973e585&x-expires=1753722000&x-signature=rc5SHIe4j8HYqxlK6CCfxJ07KH0%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a",
+                      "https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/d3081461affc914c3e1058ecfcb6ac44~tplv-tiktokx-cropcenter:100:100.jpeg?dr=10399&refresh_token=3f7d3826&x-expires=1753722000&x-signature=HWYQFf%2F0tPw%2Bl%2BG2jLJdE%2BZQjso%3D&t=4d5b0474&ps=13740610&shp=30310797&shcp=ff37627b&idc=no1a"
+                    ],
+                    "url_prefix": null
+                  },
+                  "accept_private_policy": null,
+                  "account_region": null,
+                  "aweme_count": null,
+                  "comment_setting": null,
+                  "create_time": null,
+                  "custom_verify": "",
+                  "follower_count": null,
+                  "following_count": null,
+                  "is_block": null,
+                  "is_discipline_member": null,
+                  "language": null,
+                  "region": null,
+                  "signature": null,
+                  "status": null,
+                  "unique_id_modify_time": null,
+                  "user_mode": null,
+                  "verification_type": null,
+                  "verify_info": null
+                },
+                "user_buried": false,
+                "user_digged": 0
+              }
+            ],
+            "cursor": 10,
+            "extra": {
+              "fatal_item_ids": null,
+              "logid": null,
+              "now": 1753637427000
+            },
+            "has_filtered_comments": 0,
+            "has_more": true,
+            "log_pb": {
+              "impr_id": "20250727173027356E05BD5843FC396246"
+            },
+            "reply_style": 2,
+            "status_code": 0,
+            "status_msg": "",
+            "top_gifts": null,
+            "total": 865
+          },
+          "error": null
+        }
+      ]
+    }
+  ],
+  "actions": [],
+  "total_videos": 1,
+  "total_follows": 0,
+  "total_diggs": 0,
+  "total_loads": 0,
+  "config": {
+    "trending_videos_process_batch": 1,
+    "trending_videos_fetch_batch": 1,
+    "max_cycles": 22,
+    "sleep_time": [
+      10,
+      20
+    ],
+    "tq_like": 0.14,
+    "bq_like": 0.06,
+    "follow": 0.015,
+    "comments_read": 10,
+    "session_sec": 471.6
+  }
+}
