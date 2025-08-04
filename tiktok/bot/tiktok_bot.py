@@ -125,7 +125,7 @@ class TikTokBot:
         self.current_cycle: CycleStats | None = None
 
         # Setup logging directory and file.
-        self.log_dir = Path("logs_c4")
+        self.log_dir = Path("logs_c8")
         self.log_dir.mkdir(exist_ok=True)
         self.log_file = (
             self.log_dir / f"bot_activity_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -227,7 +227,6 @@ class TikTokBot:
           4. Log actions and API responses, then decide what to do next based on the cycle completion prompt.
 
         The loop continues until:
-          - The AI decides to quit.
           - The maximum number of cycles is reached.
         """
         cycle = 0
@@ -281,7 +280,7 @@ class TikTokBot:
                 # print("watched!", playback_url)
                 actions = []
                 rand = random.random()
-                print("rand", rand)
+                # print("rand", rand)
                 success = True
                 if rand < self.tq_like:
                     success = await self.digg_video(video_id)
@@ -321,8 +320,7 @@ class TikTokBot:
             # self.activity_log.total_comments = self.total_comments
             self.activity_log.total_follows = self.total_follows
             self.activity_log.total_diggs = self.total_diggs
-            self.activity_log.total_loads = self.total_loads            
-
+            self.activity_log.total_loads = self.total_loads   
 
             await self.save_logs()
 
@@ -337,6 +335,117 @@ class TikTokBot:
             if self.max_cycles is not None and cycle >= self.max_cycles:
                 _LOGGER.info("[Cycle] Maximum cycles reached")
                 break
+             
+
+    async def run_searches(self) -> None:
+        """
+        Main execution loop for the searching bot. The bot runs in cycles and processes searches.
+
+        Each cycle performs:
+          1. Searches keyword
+          2. Process videos in batches (defined by the configuration).
+          3. For each batch, send a prompt to the AI agent and execute the returned decisions.
+          4. Log actions and API responses, then decide what to do next based on the cycle completion prompt.
+
+        The loop continues until:
+          - The maximum number of cycles is reached.
+        """
+        cycle = 0
+
+        while True:
+            cycle += 1
+            _LOGGER.info("[Cycle] Starting cycle")
+
+            # Initialize metrics for the current cycle.
+            self.current_cycle = CycleStats(
+                cycle_id=cycle,
+                start_time=datetime.now(),
+                videos_processed=0,
+                diggs_made=0,
+                follows_made=0,
+                loads_made=0,
+                videos_collected=[],
+                videos_watched=[],
+                actions=[],
+                api_responses=[],  # Initialize an empty list for API response logging.
+            )
+            # Append the current cycle log to the session activity log.
+            self.activity_log.cycles.append(self.current_cycle)
+            _LOGGER.info("[Trending] Retrieved %d trending videos", len(trending_videos))
+
+            actions = []
+            search_response = await self.search_keyword(keyword="donald trump")
+            # print("Search Response: ", search_response.model_dump_json(indent=2))
+            videos = search_response.data.items
+            for video in videos:
+                # load first ten comments for each
+                success = await self.list_comments(video_id)
+                self.current_cycle.loads_made += int(success)
+
+                # Update number of videos processed in the current cycle.
+                self.current_cycle.videos_processed += len(videos)
+
+                # Log the action for each video in the batch.
+                for video_id, action in actions:
+                    await self.log_action(
+                        video_id=video_id,
+                        action_type=action,
+                        success=success,
+                    )
+
+                # Add a delay between batches.
+                await self.sleep()
+
+            # Mark the end time for the current cycle.
+            self.current_cycle.end_time = datetime.now()
+
+            # Update total statistics in the global activity log.
+            self.activity_log.total_videos = self.total_videos
+
+            await self.save_logs()
+
+            _LOGGER.info(
+                "[Cycle] Complete - Videos: %d, Follows: %d, Diggs: %d, Loads: %d",
+                self.current_cycle.videos_processed,
+                self.current_cycle.follows_made,
+                self.current_cycle.diggs_made,
+                self.current_cycle.loads_made,
+            )
+            # Check if the maximum number of cycles has been reached.
+            if self.max_cycles is not None and cycle >= self.max_cycles:
+                _LOGGER.info("[Cycle] Maximum cycles reached")
+                break
+    
+    async def search_keyword(self, keyword: str) -> bool:
+        """
+        Perform a "digg" (like) action on a video.
+
+        :param video_id: Identifier of the video to like.
+
+        :return: True if the like action was successful, False otherwise.
+        """
+        params = TikTokParams.default_web()
+        # print("video_id here", keyword)
+        try:
+            # Execute the like action on the provided video.
+            response = await self.client.search_keyword(keyword, params=params)
+            # Log a successful API response.
+            await self.log_api_response(
+                endpoint="search_keyword",
+                success=True,
+                response_id=f"search_{keyword}",
+                response_data=response.model_dump(),
+            )
+            _LOGGER.info("[Action] Searched keyword %s", keyword)
+            return True
+        except Exception as e:
+            # Log the error details if the API call fails.
+            await self.log_api_response(
+                endpoint="search_keyword", success=False, response_id=f"search_{keyword}", error=repr(e)
+            )
+            _LOGGER.error("[Error - search] Error searching video %s: %s", keyword, repr(e))
+            return False
+
 
     async def digg_video(self, video_id: str) -> bool:
         """
@@ -347,7 +456,7 @@ class TikTokBot:
         :return: True if the like action was successful, False otherwise.
         """
         params = TikTokParams.default_web()
-        print("video_id here", video_id)
+        # print("video_id here", video_id)
         try:
             # Execute the like action on the provided video.
             response = await self.client.digg_video(video_id=AwemeId(video_id), params=params)

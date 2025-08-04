@@ -57,7 +57,7 @@ class TikTokClient:
             params = {}
         # Practically the authentication token
         params["msToken"] = self.ms_token.get_secret_value()
-
+        # print("ms here", self.ms_token.get_secret_value())
         # Sign the params
         params |= XBogus.sign(urllib.parse.urlencode(params), self.user_agent)
 
@@ -71,7 +71,7 @@ class TikTokClient:
         response = await self.client.request(
             method, url, params=params, headers=headers, cookies=cookies, **kwargs
         )
-
+        # print("response in exec", response)
         # TODO: TikTok responds to some failures with a 200 but empty body
         if response.text == "":
             response.status_code = 400
@@ -81,7 +81,6 @@ class TikTokClient:
         # Update msToken from cookies
         if "msToken" in response.cookies:
             self.ms_token = SecretStr(response.cookies["msToken"])
-
         return cast(dict[str, Any], response.json())
 
 
@@ -156,6 +155,7 @@ class TikTokClient:
             url=Urls.FULL_SEARCH,
             params=search_params.model_dump(by_alias=True, exclude_unset=True),
         )
+        print("response cli", response)
         return SearchResponse.model_validate(response)
 
     async def follow_user(self, user_id: str, params: TikTokParams) -> FollowResponse:
@@ -199,7 +199,7 @@ class TikTokClient:
         response = await self._execute_sim(
             url=play_adr,
         )
-        print("url", response)
+        # print("url", response)
         return SimulateWatchResponse.model_validate(response)
 
     async def _execute_sim(
