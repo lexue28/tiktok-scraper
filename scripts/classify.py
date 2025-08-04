@@ -3,7 +3,7 @@ import csv
 import os
 import openai
 
-client = openai.OpenAI(api_key="")
+# client = openai.OpenAI(api_key="")
 
 framework_prompt = """
 Classify the following tiktok video descriptions as 'harmful' or 'not harmful' under this harmful content framework:
