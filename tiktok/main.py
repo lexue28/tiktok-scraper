@@ -49,7 +49,8 @@ async def web_main() -> None:
     )
 
     try:
-        await bot.run()
+        # await bot.run()
+        await bot.run_searches()
     except KeyboardInterrupt:
         _LOGGER.info("Bot stopped by user")
     except Exception as e:
@@ -152,3 +153,4 @@ if __name__ == "__main__":
         asyncio.run(android_main())
     else:
         asyncio.run(web_main())
+

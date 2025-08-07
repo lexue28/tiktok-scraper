@@ -2,8 +2,11 @@ import json
 import csv
 import os
 import openai
+from dotenv import load_dotenv
 
-# client = openai.OpenAI(api_key="")
+load_dotenv()
+KEY = os.getenv("openai_api_key")
+client = openai.OpenAI(api_key=KEY)
 
 framework_prompt = """
 Classify the following tiktok video descriptions as 'harmful' or 'not harmful' under this harmful content framework:
@@ -49,53 +52,93 @@ def classify_gpt(video_id, description, account):
     return {
         "video_id": video_id,
         "link": f"https://www.tiktok.com/@temp/video/{video_id}",
-        "account": account,
+        # "account": account,
         "desc": description,
         "harmful": harmful,
         "reasoning": reasoning,
-        "day": "Sunday"
+        # "day": "Sunday"
     }
 
-for i in ["a", "c"]:
-    print("got in here")
-    input = f"logs_{i}"
-    with open(f"desc/sun/{input}_desc.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
+def classify_passive():
+    for i in ["a", "c"]:
+        print("got in here")
+        input = f"logs_{i}"
+        with open(f"desc/sun/{input}_desc.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    output_folder = os.path.join("classify/sun")
-    os.makedirs(output_folder, exist_ok=True)
-    output_path = os.path.join(output_folder, f"classified_results_{i}.csv")
+        output_folder = os.path.join("classify/sun")
+        os.makedirs(output_folder, exist_ok=True)
+        output_path = os.path.join(output_folder, f"classified_results_{i}.csv")
 
-    # Load already classified video IDs
-    existing_ids = set()
-    if os.path.exists(output_path):
-        with open(output_path, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                existing_ids.add(row["video_id"])
+        existing_ids = set()
+        if os.path.exists(output_path):
+            with open(output_path, "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    existing_ids.add(row["video_id"])
 
-    # Open CSV in append mode
-    csvfile = open(output_path, "a", encoding="utf-8", newline="")
-    writer = csv.DictWriter(csvfile, fieldnames=["video_id", "link", "account", "desc", "harmful", "reasoning", "day"])
+        csvfile = open(output_path, "a", encoding="utf-8", newline="")
+        writer = csv.DictWriter(csvfile, fieldnames=["video_id", "link", "account", "desc", "harmful", "reasoning", "day"])
 
-    # Write header only if file is empty
-    if os.stat(output_path).st_size == 0:
-        writer.writeheader()
+        if os.stat(output_path).st_size == 0:
+            writer.writeheader()
 
-    for entry in data:
-        dat = entry["data"]
-        if dat and len(dat) > 0:
-            video_id = dat[0]
-        else:
-            print("Warning: empty or malformed entry", dat)
-            continue
+        for entry in data:
+            dat = entry["data"]
+            if dat and len(dat) > 0:
+                video_id = dat[0]
+            else:
+                print("Warning: empty or malformed entry", dat)
+                continue
 
-        if video_id in existing_ids:
-            continue  # skip already processed
+            if video_id in existing_ids:
+                continue  
 
-        description = " ".join([part.strip() for part in dat[1:] if part.strip()])
-        account = entry["folder"]
-        result = classify_gpt(video_id, description, account)
-        writer.writerow(result)
+            description = " ".join([part.strip() for part in dat[1:] if part.strip()])
+            account = entry["folder"]
+            result = classify_gpt(video_id, description, account)
+            writer.writerow(result)
 
-    csvfile.close()
+        csvfile.close()
+
+def classify_active():
+        with open(f"search/logs_children_desc.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        output_folder = os.path.join("classify/search")
+        os.makedirs(output_folder, exist_ok=True)
+        output_path = os.path.join(output_folder, f"classified_results_c.csv")
+
+        # no repeats from before
+        existing_ids = set()
+        if os.path.exists(output_path):
+            with open(output_path, "r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    existing_ids.add(row["video_id"])
+
+        csvfile = open(output_path, "a", encoding="utf-8", newline="")
+        writer = csv.DictWriter(csvfile, fieldnames=["video_id", "link", "desc", "harmful", "reasoning"])
+
+        if os.stat(output_path).st_size == 0:
+            writer.writeheader()
+
+        for entry in data:
+            dat = entry["data"]
+            if dat and len(dat) > 0:
+                video_id = dat[0]
+            else:
+                print("Warning: empty or malformed entry", dat)
+                continue
+
+            if video_id in existing_ids:
+                continue  
+
+            description = " ".join([part.strip() for part in dat[1:] if part.strip()])
+            account = entry["folder"]
+            result = classify_gpt(video_id, description, "logs")
+            writer.writerow(result)
+
+        csvfile.close()
+
+classify_active()

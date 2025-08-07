@@ -30,15 +30,19 @@ def scrape(age, col):
     return all_stats
 
 # Set stat to plot
-col = "views"
-cap = "Plays"
+col = ["views","diggs","comments","shares","collects"]
+cap = ["Plays","Diggs","Comments","Shares","Collects"]
 
-# Scrape both groups and tag them
-a_stats = scrape("adults", col)
-a_stats["Age"] = "Adults"
+for i in range(5):
+    curr_col = col[i]
+    curr_cap = cap[i]
 
-c_stats = scrape("children", col)
-c_stats["Age"] = "Children"
+    # Scrape both groups and tag them
+    a_stats = scrape("adults", col)
+    a_stats["Age"] = "Adults"
+
+    c_stats = scrape("children", col)
+    c_stats["Age"] = "Children"
 
 # Combine
 df = pd.concat([a_stats, c_stats], ignore_index=True)

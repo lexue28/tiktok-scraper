@@ -1,7 +1,17 @@
 import yt_dlp
 import os
+from datetime import datetime
 
-def download_tiktok(post_id: str, video_url: str, output_dir: str = "downloads"):
+LOG_FILE = "download_log.txt"
+
+def log(message: str):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entry = f"[{timestamp}] {message}"
+    print(entry)
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(entry + "\n")
+
+def download_tiktok(post_id: str, video_url: str, output_dir: str = "download/downloads"):
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{post_id}.mp4")
 
@@ -17,11 +27,22 @@ def download_tiktok(post_id: str, video_url: str, output_dir: str = "downloads")
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([video_url])
+        try:
+            ydl.download([video_url])
+            log(f"downloaded: {post_id}")
+        except Exception as e:
+            log(f"failed: {post_id}, {str(e)}")
 
-post_meta = {
-    "id": "7526086824318553366",
-    "link": "https://www.tiktok.com/@egidiogioia2/video/7526086824318553366"
-}
+def download_from_file(filepath="download/download_ids.txt"):
+    with open(filepath, "r", encoding="utf-8") as f:
+        lines = f.readlines()
 
-download_tiktok(post_id=post_meta["id"], video_url=post_meta["link"])
+    for i, line in enumerate(lines, start=1):
+        url = line.strip()
+        if not url:
+            continue
+        post_id = url.split("/video/")[1].split("?")[0]
+        download_tiktok(post_id=post_id, video_url=url)
+
+if __name__ == "__main__":
+    download_from_file()

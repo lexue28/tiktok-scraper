@@ -17,6 +17,7 @@ prompts, or adding new features.
 """
 
 import asyncio
+import csv
 import json
 import logging
 import random
@@ -125,7 +126,7 @@ class TikTokBot:
         self.current_cycle: CycleStats | None = None
 
         # Setup logging directory and file.
-        self.log_dir = Path("logs_c8")
+        self.log_dir = Path("scripts/search/search_children")
         self.log_dir.mkdir(exist_ok=True)
         self.log_file = (
             self.log_dir / f"bot_activity_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -350,6 +351,7 @@ class TikTokBot:
         The loop continues until:
           - The maximum number of cycles is reached.
         """
+        print("in searches")
         cycle = 0
 
         while True:
@@ -371,30 +373,42 @@ class TikTokBot:
             )
             # Append the current cycle log to the session activity log.
             self.activity_log.cycles.append(self.current_cycle)
-            _LOGGER.info("[Trending] Retrieved %d trending videos", len(trending_videos))
 
             actions = []
-            search_response = await self.search_keyword(keyword="donald trump")
-            # print("Search Response: ", search_response.model_dump_json(indent=2))
-            videos = search_response.data.items
-            for video in videos:
-                # load first ten comments for each
-                success = await self.list_comments(video_id)
-                self.current_cycle.loads_made += int(success)
+            csv_path = "scripts/search/tiktok_guidelines_it.csv"
 
-                # Update number of videos processed in the current cycle.
-                self.current_cycle.videos_processed += len(videos)
+            with open(csv_path, newline="", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    for col in ["Term 1", "Term 2", "Term 3"]:
+                        keyword = row[col].strip()
+                        if keyword:
+                            print(f"Searching for keyword: {keyword}")
+                            # call your function here, e.g.
+                        search_response = await self.search_keyword(keyword=keyword)
+                        # print("Search Response: ", search_response.model_dump_json(indent=2))
+                        if not search_response or not hasattr(search_response, "data"):
+                            _LOGGER.warning(f"[Search] No results or bad response for keyword: {keyword}")
+                            continue  # skip this keyword
+                        videos = search_response.data.items
+                        for video in videos:
+                            # load first ten comments for each
+                            success = await self.list_comments(video.id)
+                            self.current_cycle.loads_made += int(success)
 
-                # Log the action for each video in the batch.
-                for video_id, action in actions:
-                    await self.log_action(
-                        video_id=video_id,
-                        action_type=action,
-                        success=success,
-                    )
+                            # Update number of videos processed in the current cycle.
+                            self.current_cycle.videos_processed += len(videos)
 
-                # Add a delay between batches.
-                await self.sleep()
+                            # Log the action for each video in the batch.
+                            for video_id, action in actions:
+                                await self.log_action(
+                                    video_id=video_id,
+                                    action_type=action,
+                                    success=success,
+                                )
+
+                            # Add a delay between batches.
+                            await self.sleep()
 
             # Mark the end time for the current cycle.
             self.current_cycle.end_time = datetime.now()
@@ -411,11 +425,7 @@ class TikTokBot:
                 self.current_cycle.diggs_made,
                 self.current_cycle.loads_made,
             )
-            # Check if the maximum number of cycles has been reached.
-            if self.max_cycles is not None and cycle >= self.max_cycles:
-                _LOGGER.info("[Cycle] Maximum cycles reached")
-                break
-    
+           
     async def search_keyword(self, keyword: str) -> bool:
         """
         Perform a "digg" (like) action on a video.

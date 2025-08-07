@@ -12,7 +12,7 @@ class BotConfig(BaseSettings):
     trending_videos_fetch_batch: int = 1
 
     max_cycles: int = 22
-    sleep_time: tuple[int, int] = (10, 20)
+    sleep_time: tuple[int, int] = (5, 10)
 
     # base_prompt: str = BASE_PROMPT
     # video_action_prompt: str = VIDEO_ACTION_PROMPT

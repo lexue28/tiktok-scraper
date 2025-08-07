@@ -70,15 +70,11 @@ async def api_call() -> None:
     # print("Comments After Publish: ", comments_after_publish.model_dump_json(indent=2))
     # await asyncio.sleep(2)
 
-    print("Searching Keyword...")
     search_response = await client.search_keyword(keyword="sex", params=params)
-    print("Search Response: ", search_response.model_dump_json(indent=2))
+    print("search Response: ", search_response.model_dump_json(indent=2))
     await asyncio.sleep(5)
     if search_response.data:
-        # Convert each result to a dict
         rows = [item.model_dump() for item in search_response.data]
-
-        # Use the keys from the first item as column headers
         fieldnames = rows[0].keys()
 
         with open("search_results_censor.csv", "w", encoding="utf-8", newline="") as csvfile:
