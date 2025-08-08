@@ -122,7 +122,7 @@ plt.rcParams.update({
 })
 
 # 4. Plot figure (6, 4)
-fig = plt.figure(figsize=(6, 12))
+fig = plt.figure(figsize=(6, 8))
 gs = GridSpec(3, 1, figure=fig)
 
 # General toxicity
@@ -137,24 +137,24 @@ ax1 = fig.add_subplot(gs[0])
 )
 
 # Average toxicity
-ax2 = fig.add_subplot(gs[1])
-(
-    so.Plot(avg_df, x="avg", color="Age")
-    .add(so.Line(), so.KDE(common_norm=False))
-    .label(title="Average Toxicity (All Categories)", x="Toxicity Score", y="Density")
-    .scale(x="log")
-    .on(ax2)
-    .plot()
-)
+# ax2 = fig.add_subplot(gs[1])
+# (
+#     so.Plot(avg_df, x="avg", color="Age")
+#     .add(so.Line(), so.KDE(common_norm=False))
+#     .label(title="Average Toxicity (All Categories)", x="Toxicity Score", y="Density")
+#     .scale(x="log")
+#     .on(ax2)
+#     .plot()
+# )
 
 # Maximum toxicity
-ax3 = fig.add_subplot(gs[2])
+ax2 = fig.add_subplot(gs[1])
 (
     so.Plot(max_df, x="max", color="Age")
     .add(so.Line(), so.KDE(common_norm=False))
     .label(title="Maximum Toxicity", x="Toxicity Score", y="Density")
     .scale(x="log")
-    .on(ax3)
+    .on(ax2)
     .plot()
 )
 
