@@ -39,15 +39,15 @@ def scrape(age, col):
     return all_stats
 
 # cols = data cols, caps = axis labels
-cols = ["views", "diggs", "comments", "shares", "collects"]
-caps = ["Views", "Likes", "Comments", "Shares", "Favorites"]
+cols = ["views", "diggs", "comments"]
+caps = ["Views", "Likes", "Comments"]
 
 nplots = len(cols)
 ncols = 3
 nrows = math.ceil(nplots / ncols)
 
 # >>> CHANGED: make figure a bit shorter. 4, 6 6,4
-fig, axs = plt.subplots(nrows, ncols, figsize=(12, 8), sharey=True)
+fig, axs = plt.subplots(nrows, ncols, figsize=(12, 4), sharey=True)
 axs = axs.flatten()
 
 for i, (col, cap) in enumerate(zip(cols, caps)):
@@ -84,6 +84,6 @@ fig.suptitle("KDE of Video Stats by Age Group", fontsize=11)
 fig.tight_layout(rect=[0, 0, 1, 0.97])
 fig.subplots_adjust(hspace=0.35, wspace=0.25)
 
-output_path = os.path.join("stats", "all_stats_kde_form.png")
+output_path = os.path.join("stats", "all_stats_kde_less.png")
 fig.savefig(output_path, dpi=200, bbox_inches="tight")
 print(f"\nSaved to {output_path}")
