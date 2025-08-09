@@ -20,7 +20,7 @@ def download_tiktok(post_id: str, video_url: str, output_dir: str = "download/do
         'quiet': False,
         'noplaylist': True,
         'format': 'mp4',
-        'cookiefile': "C:\\Users\\lexue\\OneDrive\\ComputerProjects\\MIT\\tiktok-scraper-master-3\\scripts\\cookies.txt",
+        'cookiefile': "",
         'http_headers': {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',  
         },

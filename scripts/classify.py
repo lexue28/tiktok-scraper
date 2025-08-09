@@ -128,7 +128,7 @@ def classify_active():
             if dat and len(dat) > 0:
                 video_id = dat[0]
             else:
-                print("Warning: empty or malformed entry", dat)
+                print("empty entry", dat)
                 continue
 
             if video_id in existing_ids:

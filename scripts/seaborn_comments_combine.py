@@ -8,7 +8,7 @@ import seaborn as sns
 import seaborn.objects as so
 from scipy.stats import gaussian_kde
 
-# Detoxify categories
+# detoxify categories
 target_cols = [
     "toxicity",
     "severe_toxicity",
@@ -19,7 +19,6 @@ target_cols = [
     "sexual_explicit"
 ]
 
-# 1. Scrape functions
 def scrape(age, col):
     input_folder = f"comments/detoxify/{age}"
     csv_files = glob.glob(os.path.join(input_folder, "*.csv"))
@@ -30,11 +29,6 @@ def scrape(age, col):
         df.columns = df.columns.str.strip().str.lower()
         if col in df.columns:
             dfs.append(df[col])
-        else:
-            print(f"Skipping {file}: no '{col}' column.")
-
-    if not dfs:
-        raise ValueError(f"No CSVs with a '{col}' column found in {input_folder}.")
 
     all_stats = pd.DataFrame({col: pd.concat(dfs, ignore_index=True)})
     all_stats[col] = pd.to_numeric(all_stats[col], errors="coerce")
@@ -52,10 +46,7 @@ def scrape_max(age):
         if any(col in df.columns for col in target_cols):
             dfs.append(df)
         else:
-            print(f"Skipping {file}: none of the target columns found.")
-
-    if not dfs:
-        raise ValueError(f"No CSVs with target columns found in {input_folder}.")
+            print("skipping")
 
     all_data = pd.concat(dfs, ignore_index=True)
     all_data = all_data[[col for col in target_cols if col in all_data.columns]]
@@ -65,53 +56,17 @@ def scrape_max(age):
     all_data["max"] = all_data.max(axis=1)
     return all_data
 
-def scrape_avg(age):
-    input_folder = f"comments/detoxify/{age}"
-    csv_files = glob.glob(os.path.join(input_folder, "*.csv"))
-    dfs = []
-
-    for file in csv_files:
-        df = pd.read_csv(file)
-        df.columns = df.columns.str.strip().str.lower()
-        if any(col in df.columns for col in target_cols):
-            dfs.append(df)
-        else:
-            print(f"Skipping {file}: none of the target columns found.")
-
-    if not dfs:
-        raise ValueError(f"No CSVs with target columns found in {input_folder}.")
-
-    all_data = pd.concat(dfs, ignore_index=True)
-    all_data = all_data[[col for col in target_cols if col in all_data.columns]]
-    all_data = all_data.apply(pd.to_numeric, errors="coerce")
-    all_data = all_data.replace([np.inf, -np.inf], np.nan).dropna(how="all", subset=target_cols)
-
-    all_data["avg"] = all_data.mean(axis=1)
-    return all_data
-
-# 2. Load data
-# General toxicity
 a_stats = scrape("adults", "toxicity")
 a_stats["Age"] = "Adults"
 c_stats = scrape("children", "toxicity")
 c_stats["Age"] = "Youth"
 tox_df = pd.concat([a_stats, c_stats], ignore_index=True)
-
-# Max toxicity
 a_stats = scrape_max("adults")
 a_stats["Age"] = "Adults"
 c_stats = scrape_max("children")
 c_stats["Age"] = "Youth"
 max_df = pd.concat([a_stats, c_stats], ignore_index=True)
 
-# Avg toxicity
-a_stats = scrape_avg("adults")
-a_stats["Age"] = "Adults"
-c_stats = scrape_avg("children")
-c_stats["Age"] = "Youth"
-avg_df = pd.concat([a_stats, c_stats], ignore_index=True)
-
-# 3. Style
 sns.set_palette("colorblind")
 plt.rcParams.update({
     'axes.titlesize': 11,
@@ -121,11 +76,11 @@ plt.rcParams.update({
     'legend.fontsize': 11
 })
 
-# 4. Plot figure (6, 4)
+
 fig = plt.figure(figsize=(6, 8))
 gs = GridSpec(3, 1, figure=fig)
 
-# General toxicity
+
 ax1 = fig.add_subplot(gs[0])
 (
     so.Plot(tox_df, x="toxicity", color="Age")
@@ -135,18 +90,7 @@ ax1 = fig.add_subplot(gs[0])
     .on(ax1)
     .plot()
 )
-# Average toxicity
-# ax2 = fig.add_subplot(gs[1])
-# (
-#     so.Plot(avg_df, x="avg", color="Age")
-#     .add(so.Line(), so.KDE(common_norm=False))
-#     .label(title="Average Toxicity (All Categories)", x="Toxicity Score", y="Density")
-#     .scale(x="log")
-#     .on(ax2)
-#     .plot()
-# )
 
-# Maximum toxicity
 ax2 = fig.add_subplot(gs[1])
 (
     so.Plot(max_df, x="max", color="Age")
@@ -160,9 +104,7 @@ ax2 = fig.add_subplot(gs[1])
 plt.tight_layout()
 output_path = os.path.join("comments/detoxify", "comment_toxicity_all.png")
 plt.savefig(output_path, dpi=200, bbox_inches="tight")
-print(f"Saved plot to {output_path}")
 
-# 5. Print Stats
 def print_stats(df, value_col):
     print(f"\nStats for {value_col}:")
     for group in df["Age"].unique():
@@ -175,7 +117,6 @@ def print_stats(df, value_col):
 # print_stats(avg_df, "avg")
 # print_stats(max_df, "max")
 
-# 6. KDE Peaks
 def find_kde_peak(values):
     values = values.dropna().values
     if len(values) < 2:

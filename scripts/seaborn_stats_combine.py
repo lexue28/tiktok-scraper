@@ -42,12 +42,8 @@ def scrape(age, col):
 cols = ["views", "diggs", "comments"]
 caps = ["Views", "Likes", "Comments"]
 
-nplots = len(cols)
-ncols = 3
-nrows = math.ceil(nplots / ncols)
 
-# >>> CHANGED: make figure a bit shorter. 4, 6 6,4
-fig, axs = plt.subplots(nrows, ncols, figsize=(12, 4), sharey=True)
+fig, axs = plt.subplots(1, 3, figsize=(12, 4), sharey=True)
 axs = axs.flatten()
 
 for i, (col, cap) in enumerate(zip(cols, caps)):
@@ -63,8 +59,7 @@ for i, (col, cap) in enumerate(zip(cols, caps)):
     df[col] = df[col].astype("float64")
     df[col] += np.random.normal(0, 1e-6, size=len(df))
 
-    # >>> CHANGED: only show "Density" at the start of each row
-    y_label = "Density" if (i % ncols == 0) else ""
+    y_label = "Density"
 
     (
         so.Plot(df, x=col, color="Age")
@@ -75,15 +70,12 @@ for i, (col, cap) in enumerate(zip(cols, caps)):
         .plot()
     )
 
-# >>> CHANGED: hide any unused axes (the 6th slot)
-for j in range(nplots, len(axs)):
-    fig.delaxes(axs[j])  # removes the extra axis entirely
+for j in range(3, len(axs)):
+    fig.delaxes(axs[j])  
 
 fig.suptitle("KDE of Video Stats by Age Group", fontsize=11)
-# >>> CHANGED: layout tweaks to reduce gaps
 fig.tight_layout(rect=[0, 0, 1, 0.97])
 fig.subplots_adjust(hspace=0.35, wspace=0.25)
 
 output_path = os.path.join("stats", "all_stats_kde_less.png")
 fig.savefig(output_path, dpi=200, bbox_inches="tight")
-print(f"\nSaved to {output_path}")

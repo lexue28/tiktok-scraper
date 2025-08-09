@@ -15,13 +15,9 @@ from dotenv import load_dotenv
 load_dotenv()
 MS_TOKEN = os.getenv("MS_TOKEN")
 SESSION_ID = os.getenv("SESSION_ID")
-# CSRF_TOKEN = os.getenv("CSRF_TOKEN")
-print("sessionid", SESSION_ID)
+CSRF_TOKEN = os.getenv("CSRF_TOKEN")
 
 BASE_URL = "https://www.tiktok.com"
-# MS_TOKEN = "KE1YZzwn04uhMYR_HhMG3YZZy0Ux5yQ0c8XckLuUNth_L8UD62-ZtyuYLbc8dCCG4O19lhkKQwA4m7Vyunygk1Zfh9FqRRAjbSyqDxZ3JBg1YkDQxtsu455WItGKMlATjPvu2wPUY3anfQM="
-# SESSION_ID = "02e9fab12e132cdf299924f28f13e5a9"
-CSRF_TOKEN = "3f1b7bd5d052ed1b194a9787663cafe6"
 
 async def api_call() -> None:
     """Test an API call locally."""

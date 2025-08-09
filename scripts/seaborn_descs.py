@@ -13,11 +13,10 @@ plt.rcParams.update({
     'ytick.labelsize': 11,
     'legend.fontsize': 11
 })
-# do this for search as well
+# days vs. search
 # days = ["Thur", "Fri", "Sat", "Sun"]
 days = ["search"]
 
-# Initialize counters
 group_stats = {
     "Adults": {"harmful": 0, "total": 0},
     "Children": {"harmful": 0, "total": 0},
@@ -48,22 +47,20 @@ for day in days:
             group_stats[group]["harmful"] += harmful_count
             group_stats[group]["total"] += total_count
 
-# Compute proportions and print
+# compute prop
 proportions = []
 for group in ["Adults", "Children"]:
     harmful = group_stats[group]["harmful"]
     total = group_stats[group]["total"]
     proportion = harmful / total if total > 0 else 0
-    label = group if group == "Adults" else "Youth"  # Rename Children to Youth
+    label = group if group == "Adults" else "Youth"  
     proportions.append({"Group": label, "ProportionHarmful": proportion})
     print(f"{group.title()}: {harmful} harmful / {total} total = {proportion:.2%}")
 
-# Create DataFrame for bar plot
 plot_df = pd.DataFrame(proportions)
 
 palette = {"Adults": "#0173b2", "Youth": "#de8f05"}
 
-# Plot
 plt.figure(figsize=(6, 4))
 p = sns.barplot(data=plot_df, x="Group", y="ProportionHarmful", palette=palette)
 plt.ylabel("Proportion Harmful")
@@ -72,7 +69,6 @@ plt.title("Proportion of Harmful Descriptions")
 plt.ylim(0, plot_df["ProportionHarmful"].max() * 1.2)
 plt.tight_layout()
 
-# Save
 output_path = os.path.join("classify", "desc_harmful_prop_search.png")
 p.figure.savefig(output_path, dpi=200, bbox_inches="tight")
 print(f"Saved plot to {output_path}")
