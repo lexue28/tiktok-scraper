@@ -76,3 +76,9 @@ plt.tight_layout()
 output_path = os.path.join("classify", "desc_harmful_prop_search.png")
 p.figure.savefig(output_path, dpi=200, bbox_inches="tight")
 print(f"Saved plot to {output_path}")
+
+'''
+Adults: 64 harmful / 225 total = 28.44%
+Children: 60 harmful / 215 total = 27.91%
+'''
+

@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from seaborn import objects as so
 import seaborn as sns
+import math
 
 # ACL require font 11
 sns.set_palette("colorblind")
@@ -20,7 +21,6 @@ def scrape(age, col):
     input_folder = f"stats/{age}"
     csv_files = glob.glob(os.path.join(input_folder, "*.csv"))
     dfs = []
-
     for file in csv_files:
         df = pd.read_csv(file)
         df.columns = df.columns.str.strip().str.lower()
@@ -30,37 +30,29 @@ def scrape(age, col):
             dfs.append(df)
         else:
             print(f"skipping {file}")
-
     if not dfs:
         raise ValueError(f"No CSVs with a '{col}' column found in {input_folder}.")
-
     all_stats = pd.concat(dfs, ignore_index=True)
     all_stats = all_stats.replace([np.inf, -np.inf], np.nan).dropna(subset=[col])
-
     if all_stats.empty:
         raise ValueError(f"No valid {col} data to plot.")
-
     return all_stats
 
-def print_stats(df, col):
-    print(f"\nStats for {col}:")
-    for group in df["Age"].unique():
-        sub = df[df["Age"] == group][col]
-        median = np.median(sub)
-        p95 = np.percentile(sub, 95)
-        print(f"  {group}: Median = {median:.2f}, 95th percentile = {p95:.2f}")
-
-# caps is for names of axis labels
+# cols = data cols, caps = axis labels
 cols = ["views", "diggs", "comments", "shares", "collects"]
-caps = ["Plays", "Diggs", "Comments", "Shares", "Collects"]
+caps = ["Views", "Likes", "Comments", "Shares", "Favorites"]
 
-fig, axs = plt.subplots(5, 1, figsize=(6, 20), sharey=True)
+nplots = len(cols)
+ncols = 3
+nrows = math.ceil(nplots / ncols)
+
+# >>> CHANGED: make figure a bit shorter. 4, 6 6,4
+fig, axs = plt.subplots(nrows, ncols, figsize=(12, 8), sharey=True)
 axs = axs.flatten()
 
 for i, (col, cap) in enumerate(zip(cols, caps)):
     a_stats = scrape("adults", col)
     a_stats["Age"] = "Adults"
-
     c_stats = scrape("children", col)
     c_stats["Age"] = "Youth"
 
@@ -70,40 +62,28 @@ for i, (col, cap) in enumerate(zip(cols, caps)):
     df = df[np.isfinite(df[col])]
     df[col] = df[col].astype("float64")
     df[col] += np.random.normal(0, 1e-6, size=len(df))
+
+    # >>> CHANGED: only show "Density" at the start of each row
+    y_label = "Density" if (i % ncols == 0) else ""
+
     (
         so.Plot(df, x=col, color="Age")
         .add(so.Line(), so.KDE(common_norm=False))
-        .label(x=cap, y="Density")
+        .label(x=cap, y=y_label)
         .scale(x="log")
         .on(axs[i])
         .plot()
     )
 
+# >>> CHANGED: hide any unused axes (the 6th slot)
+for j in range(nplots, len(axs)):
+    fig.delaxes(axs[j])  # removes the extra axis entirely
+
 fig.suptitle("KDE of Video Stats by Age Group", fontsize=11)
-fig.tight_layout(rect=[0, 0, 1, 0.97])  # reduce gap
-fig.subplots_adjust(hspace=0.3)  # vert spacing
+# >>> CHANGED: layout tweaks to reduce gaps
+fig.tight_layout(rect=[0, 0, 1, 0.97])
+fig.subplots_adjust(hspace=0.35, wspace=0.25)
+
 output_path = os.path.join("stats", "all_stats_kde_form.png")
 fig.savefig(output_path, dpi=200, bbox_inches="tight")
 print(f"\nSaved to {output_path}")
-
-'''
-
-Stats for Views:
-  Adults: Median = 1500000.00, 95th percentile = 30200000.00        
-  Children: Median = 1500000.00, 95th percentile = 28835000.00      
-
-Stats for Diggs:
-  Adults: Median = 104600.00, 95th percentile = 2200000.00
-  Children: Median = 104050.00, 95th percentile = 2000000.00        
-
-Stats for Comments:
-  Adults: Median = 704.00, 95th percentile = 9984.80
-  Children: Median = 648.50, 95th percentile = 12000.00
-
-Stats for Shares:
-  Adults: Median = 3740.00, 95th percentile = 201500.00
-  Children: Median = 3382.50, 95th percentile = 185250.00
-
-Stats for Collects:
-  Adults: Median = 4617.00, 95th percentile = 114300.00
-  Children: Median = 4458.00, 95th percentile = 106315.00'''

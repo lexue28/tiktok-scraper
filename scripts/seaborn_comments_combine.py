@@ -135,7 +135,6 @@ ax1 = fig.add_subplot(gs[0])
     .on(ax1)
     .plot()
 )
-
 # Average toxicity
 # ax2 = fig.add_subplot(gs[1])
 # (
