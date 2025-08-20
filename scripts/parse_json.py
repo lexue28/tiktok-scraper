@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import random
 
 def extract_hashtags(json_obj):
     all_cycles = []
@@ -227,6 +228,89 @@ day_to_dates = {
 #     for age in ["a", "c"]:
 #         json_output_desc(dates=dates, day=day, age=age)
 
+def json_output_random():
+    for group in ["a", "c"]:
+        all_entries = []
+        for day in ["thur", "fri", "sat", "sun"]:
+            parent_folder = os.path.join("desc", day)
+            if not os.path.exists(parent_folder):
+                continue
+            filename = f"logs_{group}_desc.json"
+            input_path = os.path.join(parent_folder, filename)
+            if not os.path.exists(input_path):
+                continue
+            with open(input_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                all_entries.extend(data)
+
+        sampled = random.sample(all_entries, 5) 
+
+        os.makedirs("desc", exist_ok=True)
+        output_path = os.path.join("desc", f"sampled_{group}_extra.json")
+        with open(output_path, "w", encoding="utf-8") as out:
+            json.dump(sampled, out, ensure_ascii=False, indent=2)
+
+# json_output_random()
+
+def json_output_random_search():
+    import os, json, random, csv
+
+    def load_excluded_ids():
+        s = set()
+        for folder in ["classify/sampled", "classify"]:
+            if not os.path.exists(folder):
+                continue
+            for fn in os.listdir(folder):
+                if not fn.endswith(".csv"):
+                    continue
+                p = os.path.join(folder, fn)
+                try:
+                    with open(p, "r", encoding="utf-8") as f:
+                        r = csv.DictReader(f)
+                        if not r.fieldnames or "video_id" not in r.fieldnames:
+                            continue
+                        for row in r:
+                            vid = str(row.get("video_id", "")).strip()
+                            if vid:
+                                s.add(vid)
+                except Exception:
+                    continue
+        return s
+
+    excluded = load_excluded_ids()
+    used = set()
+
+    for group in ["adult", "children"]:
+        filename = f"logs_{group}_desc.json"
+        input_path = os.path.join("search", filename)
+        if not os.path.exists(input_path):
+            continue
+        with open(input_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        unique_entries = []
+        seen_local = set()
+        for entry in data:
+            dat = entry.get("data", [])
+            vid = str(dat[0]).strip() if dat else ""
+            if not vid or vid in excluded or vid in used or vid in seen_local:
+                continue
+            seen_local.add(vid)
+            unique_entries.append(entry)
+
+        take = min(25, len(unique_entries))
+        sampled = random.sample(unique_entries, take) if take else []
+        for e in sampled:
+            d = e.get("data", [])
+            if d:
+                used.add(str(d[0]).strip())
+
+        os.makedirs("desc", exist_ok=True)
+        output_path = os.path.join("desc", f"sampled_search_{group}_extra.json")
+        with open(output_path, "w", encoding="utf-8") as out:
+            json.dump(sampled, out, ensure_ascii=False, indent=2)
+json_output_random_search()
+
 def json_output_desc_search(age):
     parent_folder = f"search/{age}"
     output_file = f"search/logs_{age}_desc.json"
@@ -246,7 +330,7 @@ def json_output_desc_search(age):
     with open(output_file, "w", encoding="utf-8") as out:
         json.dump(all_entries, out, ensure_ascii=False, indent=2)
 
-json_output_desc_search("children")
+# json_output_desc_search("children")
 # File paths
 
 def json_output_comments():
@@ -298,10 +382,10 @@ def json_output_stats(id):
         writer.writerow(["video_id", "views", "collects", "diggs", "comments", "shares"])
         writer.writerows(all_pairs)
 
-for letter in ["a", "c"]:
-    for i in range(1, 11):
-        print("hey", f"{letter}{i}")
-        json_output_stats(f"{letter}{i}")
+# for letter in ["a", "c"]:
+#     for i in range(1, 11):
+#         print("hey", f"{letter}{i}")
+#         json_output_stats(f"{letter}{i}")
 
 def hashtag_output():
     input_folder = "../logs_c2"

@@ -2,7 +2,7 @@ import yt_dlp
 import os
 from datetime import datetime
 
-LOG_FILE = "download_log.txt"
+LOG_FILE = "download_new_log.txt"
 
 def log(message: str):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -11,7 +11,7 @@ def log(message: str):
     with open(LOG_FILE, "a", encoding="utf-8") as f:
         f.write(entry + "\n")
 
-def download_tiktok(post_id: str, video_url: str, output_dir: str = "download/downloads"):
+def download_tiktok(post_id: str, video_url: str, output_dir: str = "download/downloads_new"):
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, f"{post_id}.mp4")
 
@@ -20,7 +20,7 @@ def download_tiktok(post_id: str, video_url: str, output_dir: str = "download/do
         'quiet': False,
         'noplaylist': True,
         'format': 'mp4',
-        'cookiefile': "",
+        'cookiefile': "C:\\Users\\lexue\\OneDrive\\ComputerProjects\\MIT\\tiktok-scraper-master-3\\scripts\\cookies.txt",
         'http_headers': {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',  
         },

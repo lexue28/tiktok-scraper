@@ -83,14 +83,14 @@ sns.swarmplot(data=plot_df, x="Group", y="ProportionHarmful",
               size=5, linewidth=0.5, edgecolor="black",
               palette={"Adults": blue_color, "Youth": orange_color})
 
-plt.title("Distribution of Harmful Descriptions")
+plt.title("")
 plt.ylim(0, plot_df["ProportionHarmful"].max() * 1.1)
 plt.xlabel("")
 
-plt.ylabel("")
+plt.ylabel("% of harmful videos")
 plt.tight_layout()
 
-out_path = os.path.join("classify", "desc_box_fyf_only.png")
+out_path = os.path.join("classify", "desc_box.png")
 plt.savefig(out_path, dpi=200, bbox_inches="tight")
 print(f"Saved to: {out_path}")
 

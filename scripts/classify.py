@@ -59,14 +59,15 @@ def classify_gpt(video_id, description, account):
         # "day": "Sunday"
     }
 
-def classify_passive():
-    for i in ["a", "c"]:
+def classify_passive_sample():
+    for i in ["sampled_search_extra"]:
         print("got in here")
-        input = f"logs_{i}"
-        with open(f"desc/sun/{input}_desc.json", "r", encoding="utf-8") as f:
+        # input = f"logs_{i}"
+        with open(f"desc/{i}.json", "r", encoding="utf-8") as f:
+            print("hey")
             data = json.load(f)
 
-        output_folder = os.path.join("classify/sun")
+        output_folder = os.path.join("classify/sampled")
         os.makedirs(output_folder, exist_ok=True)
         output_path = os.path.join(output_folder, f"classified_results_{i}.csv")
 
@@ -98,6 +99,51 @@ def classify_passive():
             account = entry["folder"]
             result = classify_gpt(video_id, description, account)
             writer.writerow(result)
+
+        csvfile.close()
+
+classify_passive_sample()
+
+def classify_passive():
+    for i in ["thur", "fri", "sat", "sun"]:
+        for j in ["a", "c"]:
+            print("got in here")
+            input = f"logs_{j}"
+            with open(f"desc/{i}/{input}_desc.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            output_folder = os.path.join("classify/sun")
+            os.makedirs(output_folder, exist_ok=True)
+            output_path = os.path.join(output_folder, f"classified_results_{i}.csv")
+
+            existing_ids = set()
+            if os.path.exists(output_path):
+                with open(output_path, "r", encoding="utf-8") as f:
+                    reader = csv.DictReader(f)
+                    for row in reader:
+                        existing_ids.add(row["video_id"])
+
+            csvfile = open(output_path, "a", encoding="utf-8", newline="")
+            writer = csv.DictWriter(csvfile, fieldnames=["video_id", "link", "account", "desc", "harmful", "reasoning", "day"])
+
+            if os.stat(output_path).st_size == 0:
+                writer.writeheader()
+
+            for entry in data:
+                dat = entry["data"]
+                if dat and len(dat) > 0:
+                    video_id = dat[0]
+                else:
+                    print("Warning: empty or malformed entry", dat)
+                    continue
+
+                if video_id in existing_ids:
+                    continue  
+
+                description = " ".join([part.strip() for part in dat[1:] if part.strip()])
+                account = entry["folder"]
+                result = classify_gpt(video_id, description, account)
+                writer.writerow(result)
 
         csvfile.close()
 
@@ -141,4 +187,4 @@ def classify_active():
 
         csvfile.close()
 
-classify_active()
+# classify_active()
