@@ -197,7 +197,7 @@ def annotate_accur():
     mat = np.array([[(row == c).sum() for c in cats] for _, row in ratings.iterrows()], dtype=int)
     mat = mat[mat.sum(axis=1) > 0]
     n_per_item = mat.sum(axis=1)
-    assert np.all(n_per_item == n_per_item[0]), "Fleiss' kappa assumes constant raters/item"
+    assert np.all(n_per_item == n_per_item[0])
     n = n_per_item[0]
     N = mat.shape[0]
     kappa = fleiss_kappa(mat, method="fleiss")
